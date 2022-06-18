@@ -1,14 +1,13 @@
+import React from 'react';
 import './App.css';
-import logo from './image/mainimagen.png';
+import { Logo } from "./Logo"
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} alt="hola"/>
-        <div id="fb-root"></div>
-      </header>
-    </div>
+    <React.Fragment>
+      <Logo />
+    </React.Fragment>
   );
 }
 
