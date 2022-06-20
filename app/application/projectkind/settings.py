@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-n+)!v^#(0d%i1#!_)!k)o)p^skh6e!p-mz9l&x-age0j461s7i
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['3.95.7.146','127.0.0.1']
 
 
 # Application definition
@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django_extensions',
     'rest_framework',
     'registro'
 ]
@@ -78,10 +79,10 @@ WSGI_APPLICATION = 'projectkind.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'kinfun_db',
+        'NAME': 'storage_kidfuns',
         'USER': 'root',
-        'PASSWORD': 'root',
-        'HOST': '127.0.0.1',
+        'PASSWORD': '1234root',
+        'HOST': 'storage-kidfuns.c2pwde3tvoew.us-east-1.rds.amazonaws.com',
         'PORT': '3306',
 
     }
