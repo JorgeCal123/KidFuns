@@ -10,19 +10,19 @@ from registro.models import Progres
 """serializer class"""
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
-        model: User
+        model = User
         fields = ['id','country','name','email']
         #exclude = [password] excluye password
 
 class KidSerializer(serializers.ModelSerializer):
     class Meta:
         model = Kid
-        fields = ['id','name','age']
-        #fields ='__all__' todos los campos
+        #fields = ['id','name','age','']
+        fields ='__all__' #todos los campos
 
 class LevelSerializer(serializers.ModelSerializer):
     class Meta:
-        model: Level
+        model= Level
         fields = ['id','type','stage','id_kid']
 
 class ProgresSerializer(serializers.ModelSerializer):
