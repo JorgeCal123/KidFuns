@@ -14,6 +14,7 @@ from rest_framework.renderers import JSONRenderer
 from rest_framework.parsers import JSONParser
 from django.db.models import Prefetch
 
+from django.contrib.auth.hashers import make_password
 
 #Models 
 from registro.models import User
@@ -42,6 +43,7 @@ class Registro_UserApiView(APIView):#ruta register
         if serializer.is_valid(raise_exception = True):
             validated_data = serializer.validated_data
             user = User(**validated_data)
+            user.password = make_password('password') 
             user.save() #al guardar yame crea la id
             serializer_response = UserSerializer(user)
             return Response(serializer_response.data, status=status.HTTP_201_CREATED)

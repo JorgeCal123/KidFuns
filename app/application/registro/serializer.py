@@ -1,6 +1,9 @@
 #Django import
 from rest_framework import serializers
 
+#make password
+from django.contrib.auth.hashers import make_password
+
 #Models
 from registro.models import User
 from registro.models import Kid
@@ -11,9 +14,10 @@ from registro.models import Progres
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
-        fields = ['id','country','name','email']
+        fields = ['id','country','name','email','password']
         #exclude = [password] excluye password
-
+        validate_password = make_password
+        
 class KidSerializer(serializers.ModelSerializer):
     class Meta:
         model = Kid
@@ -30,5 +34,7 @@ class ProgresSerializer(serializers.ModelSerializer):
         model:Progres
         fiels = ['id','games','date','score','correct','fail','id_level']
 
-
-
+#class UserListSerializer(serializers.ModelSerializer):
+ #   class Meta:
+  #      model = User
+   #     fields = '__all__'
