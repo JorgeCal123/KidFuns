@@ -16,7 +16,7 @@ class UserSerializer(serializers.ModelSerializer):
         model = User
         fields = ['id','country','name','email','password']
         #exclude = [password] excluye password
-        validate_password = make_password
+        #validate_password = make_password
         
 class KidSerializer(serializers.ModelSerializer):
     class Meta:
