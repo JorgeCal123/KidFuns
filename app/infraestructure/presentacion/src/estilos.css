@@ -20,3 +20,9 @@ main {
 	margin: auto;
 	padding: 40px;
 }
+@media (max-width: 800px){
+	img {
+		width:98%;
+		height: auto;
+	}
+}

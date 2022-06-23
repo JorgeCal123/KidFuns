@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Logo } from "./Logo"
 import { Formulario, Label, ContenedorTerminos, ContenedorBotonCentrado, Boton, MensajeExito, MensajeError } from './elementos/Formularios';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -6,23 +6,18 @@ import { faExclamationTriangle } from '@fortawesome/free-solid-svg-icons';
 import Input from './componentes/Input';
 
 const App = () => {
-  const [usuario, cambiarUsuario] = useState({ campo: '', valido: null });
-  const [nombre, cambiarNombre] = useState({ campo: '', valido: null });
+  const [country, cambiarCountry] = useState({ campo: '', valido: null });
+  const [name, cambiarName] = useState({ campo: '', valido: null });
+  const [email, cambiarEmail] = useState({ campo: '', valido: null });
+  const [formularioValido, cambiarFormularioValido] = useState(null);
   const [password, cambiarPassword] = useState({ campo: '', valido: null });
   const [password2, cambiarPassword2] = useState({ campo: '', valido: null });
-  const [correo, cambiarCorreo] = useState({ campo: '', valido: null });
-  const [telefono, cambiarTelefono] = useState({ campo: '', valido: null });
-  const [terminos, cambiarTerminos] = useState(false);
-  const [formularioValido, cambiarFormularioValido] = useState(null);
-
   const expresiones = {
-    usuario: /^[a-zA-Z0-9_-]{3,16}$/, // Letras, numeros, guion y guion_bajo
-    nombre: /^[a-zA-ZÀ-ÿ\s]{1,40}$/, // Letras y espacios, pueden llevar acentos.
+    country: /^[a-zA-ZÀ-ÿ\s]{1,40}$/, // Letras, numeros, guion y guion_bajo
+    name: /^[a-zA-ZÀ-ÿ\s]{2,40}$/, // Letras y espacios, pueden llevar acentos.
+    email: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,
     password: /^.{4,12}$/, // 4 a 12 digitos.
-    correo: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,
-    telefono: /^\d{7,14}$/ // 7 a 14 numeros.
   }
-
   const validarPassword2 = () => {
     if (password.campo.length > 0) {
       if (password.campo !== password2.campo) {
@@ -36,32 +31,40 @@ const App = () => {
       }
     }
   }
-
-  const onChangeTerminos = (e) => {
-    cambiarTerminos(e.target.checked);
-  }
-
+  
   const onSubmit = (e) => {
     e.preventDefault();
 
     if (
-      usuario.valido === 'true' &&
-      nombre.valido === 'true' &&
+      country.valido === 'true' &&
+      name.valido === 'true' &&
+      email.valido === 'true' &&
       password.valido === 'true' &&
-      password2.valido === 'true' &&
-      correo.valido === 'true' &&
-      telefono.valido === 'true' &&
-      terminos
+      password2.valido === 'true'
     ) {
       cambiarFormularioValido(true);
-      cambiarUsuario({ campo: '', valido: '' });
-      cambiarNombre({ campo: '', valido: null });
+      cambiarCountry({ campo: '', valido: '' });
+      cambiarName({ campo: '', valido: null });
+      cambiarEmail({ campo: '', valido: null });
       cambiarPassword({ campo: '', valido: null });
-      cambiarPassword2({ campo: '', valido: 'null' });
-      cambiarCorreo({ campo: '', valido: null });
-      cambiarTelefono({ campo: '', valido: null });
+      cambiarPassword2({ campo: '', valido: null });
 
-      // ... 
+      // envio de datos
+      console.log('hola')
+      const requestOptions = {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          country: country['campo'],
+          name:  name['campo'],
+          email: email['campo'],
+          password: password['campo'],
+      })
+    };
+    fetch('http://127.0.0.1:8000/user/', requestOptions)
+        .then(response => response.json())
+        .then(data => console.log('repuesta', data));
+
     } else {
       cambiarFormularioValido(false);
     }
@@ -72,78 +75,54 @@ const App = () => {
       <Logo />
       <Formulario action="" onSubmit={onSubmit}>
         <Input
-          estado={usuario}
-          cambiarEstado={cambiarUsuario}
+          estado={country}
+          cambiarEstado={cambiarCountry}
           tipo="text"
-          label="Usuario"
-          placeholder="john123"
-          name="usuario"
-          leyendaError="El usuario tiene que ser de 4 a 16 dígitos y solo puede contener numeros, letras y guion bajo."
-          expresionRegular={expresiones.usuario}
+          label="country"
+          placeholder="colombia"
+          name="country"
+          leyendaError="El country tiene que ser de 4 a 16 dígitos y solo puede contener numeros, letras y guion bajo."
+          expresionRegular={expresiones.country}
         />
         <Input
-          estado={nombre}
-          cambiarEstado={cambiarNombre}
+          estado={name}
+          cambiarEstado={cambiarName}
           tipo="text"
           label="Nombre"
           placeholder="John Doe"
-          name="usuario"
-          leyendaError="El nombre solo puede contener letras y espacios."
-          expresionRegular={expresiones.nombre}
+          name="country"
+          leyendaError="El name solo puede contener letras y espacios."
+          expresionRegular={expresiones.name}
+        />       
+        <Input
+          estado={email}
+          cambiarEstado={cambiarEmail}
+          tipo="email"
+          label="Correo Electrónico"
+          placeholder="john@email.com"
+          name="email"
+          leyendaError="El email solo puede contener letras, numeros, puntos, guiones y guion bajo."
+          expresionRegular={expresiones.email}
         />
         <Input
           estado={password}
           cambiarEstado={cambiarPassword}
           tipo="password"
-          label="Contraseña"
-          name="password1"
-          leyendaError="La contraseña tiene que ser de 4 a 12 dígitos."
+          label="password"
+          name="password"
+          leyendaError=" el password debe teber 4 a 12 digitos."
           expresionRegular={expresiones.password}
         />
         <Input
           estado={password2}
           cambiarEstado={cambiarPassword2}
           tipo="password"
-          label="Repetir Contraseña"
+          label="password2"
           name="password2"
-          leyendaError="Ambas contraseñas deben ser iguales."
           funcion={validarPassword2}
+          leyendaError="el password debe ser igual."
+          expresionRegular={expresiones.password2}
         />
-        <Input
-          estado={correo}
-          cambiarEstado={cambiarCorreo}
-          tipo="email"
-          label="Correo Electrónico"
-          placeholder="john@correo.com"
-          name="correo"
-          leyendaError="El correo solo puede contener letras, numeros, puntos, guiones y guion bajo."
-          expresionRegular={expresiones.correo}
-        />
-        <Input
-          estado={telefono}
-          cambiarEstado={cambiarTelefono}
-          tipo="text"
-          label="Teléfono"
-          placeholder="4491234567"
-          name="telefono"
-          leyendaError="El telefono solo puede contener numeros y el maximo son 14 dígitos."
-          expresionRegular={expresiones.telefono}
-        />
-
-
-
-        <ContenedorTerminos>
-          <Label>
-            <input
-              type="checkbox"
-              name="terminos"
-              id="terminos"
-              checked={terminos}
-              onChange={onChangeTerminos}
-            />
-            Acepto los Terminos y Condiciones
-          </Label>
-        </ContenedorTerminos>
         {formularioValido === false && <MensajeError>
           <p>
             <FontAwesomeIcon icon={faExclamationTriangle} />
