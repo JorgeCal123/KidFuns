@@ -4,6 +4,12 @@
 	box-sizing: border-box;
 }
 
+@media (max-width: 800px) {
+  img {
+    width: 98%;
+    height: auto;
+  }
+}
 body {
 	background-image: url(https://media.istockphoto.com/vectors/cloud-cartoon-with-blue-sky-outdoor-landscape-background-vector-vector-id1282278279?b=1&k=6&m=1282278279&s=170667a&w=0&h=b-0Fjs6JMBaXV7HixCk93FGh-eu2nQBfOZtqxuD0VAs=);
 	background-repeat: no-repeat;
