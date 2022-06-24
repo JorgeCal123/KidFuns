@@ -65,7 +65,7 @@ const Registerkids = () => {
           placeholder="nombre"
           name="name"
           leyendaError="por lo menos el primer nombre, letras y guion bajo."
-          expresionRegular={expresiones.country}
+          expresionRegular={expresiones.name}
         />
         <Input
           estado={age}
@@ -75,6 +75,7 @@ const Registerkids = () => {
           placeholder="edad"
           name="age"
           leyendaError="cual es la edad."
+          expresionRegular={expresiones.age}
         />       
         {/*<Input
           estado={avatar}
