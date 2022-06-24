@@ -4,14 +4,12 @@ import { Formulario, ContenedorBotonCentrado, Boton, MensajeExito, MensajeError 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faExclamationTriangle } from '@fortawesome/free-solid-svg-icons';
 import Input from '../componentes/Input';
-import { useNavigate } from 'react-router-dom';
 
 const Registerkids = () => {
   const [name, cambiarName] = useState({ campo: '', valido: null });
   const [age, cambiarAge] = useState({ campo: '', valido: null });
   //const [avatar, cambiaraAvatar] = useState({ campo: '', valido: null });
   const [formularioValido, cambiarFormularioValido] = useState(null);
-  const navigate = useNavigate();
   const expresiones = {
     country: /^[a-zA-ZÀ-ÿ\s]{1,40}$/, // Letras, numeros, guion y guion_bajo
     name: /^[a-zA-ZÀ-ÿ\s]{2,40}$/, // Letras y espacios, pueden llevar acentos.
@@ -95,7 +93,7 @@ const Registerkids = () => {
           </p>
         </MensajeError>}
         <ContenedorBotonCentrado>
-          <Boton type="submit" onClick={() => navigate('/Userkids')}>Registrar</Boton>
+          <Boton type="submit" >Registrar</Boton>
           {formularioValido === true && <MensajeExito>Formulario enviado exitosamente!</MensajeExito>}
         </ContenedorBotonCentrado>
       </Formulario>
