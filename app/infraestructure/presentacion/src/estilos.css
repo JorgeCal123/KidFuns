@@ -4,14 +4,8 @@
 	box-sizing: border-box;
 }
 
-@media (max-width: 800px) {
-  img {
-    width: 98%;
-    height: auto;
-  }
-}
 body {
-	background-image: url(https://media.istockphoto.com/vectors/cloud-cartoon-with-blue-sky-outdoor-landscape-background-vector-vector-id1282278279?b=1&k=6&m=1282278279&s=170667a&w=0&h=b-0Fjs6JMBaXV7HixCk93FGh-eu2nQBfOZtqxuD0VAs=);
+	background-image: url('./image/fondos/fondo1.jpg');
 	background-repeat: no-repeat;
 	background-size: cover;
 	min-height: 100vh;
@@ -25,4 +19,20 @@ main {
 	width: 80%;
 	margin: auto;
 	padding: 40px;
+}
+
+.logoprincipal {
+	width: 100%;
+	height: auto;
+}
+
+@media (max-width: 300px) {
+  body {
+	width: 70%;
+  height: auto;
+  }
+  .logoprincipal {
+	width: 200%;
+	height: auto;
+}
 }

@@ -45,6 +45,7 @@ const Home = () => {
           cambiarEstado={cambiarPassword}
           tipo="password"
           label="Contraseña"
+          placeholder="password"
           name="password1"
           leyendaError="La contraseña tiene que ser de 4 a 12 dígitos."
           expresionRegular={expresiones.password}
@@ -68,12 +69,12 @@ const Home = () => {
           </p>
         </MensajeError>}
         <ContenedorBotonCentrado>
-          <Boton type="submit">Enviar</Boton>
+          <Boton type="submit">Ingresar</Boton>
           {formularioValido === true && <MensajeExito>Formulario enviado exitosamente!</MensajeExito>}
         </ContenedorBotonCentrado>
       </Formulario>
       <Boton onClick={() => navigate('/Register')}>
-        Registrarse
+        Registrate
       </Boton>
     </main>
   );

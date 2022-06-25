@@ -117,10 +117,10 @@ const ContenedorBotonCentrado = styled.div`
 `;
 
 const Boton = styled.button`
-	height: 45px;
+	height: ${props => props.small ? 40 : 50}px;
+	width: ${props => props.small ? 60 : 75}px;
 	line-height: 45px;
-	width: 30%;
-	background: #000;
+	background: #4682b4;
 	color: #fff;
 	font-weight: bold;
 	border: none;
@@ -140,7 +140,7 @@ const MensajeExito = styled.p`
 
 const MensajeError = styled.div`
 	height: 45px;
-	line-height: 45px;
+	line-height: 20px;
 	background: #F66060;
 	padding: 0px 15px;
 	border-radius: 3px;
