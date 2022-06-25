@@ -151,6 +151,10 @@ const MensajeError = styled.div`
 	b {
 		margin-left: 10px;
 	}
+	@media (max-width: 800px){
+		grid-column: span 1;
+		height: 100px;
+	}
 `;
 
 export {
