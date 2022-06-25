@@ -5,7 +5,7 @@ import { LevelKids } from "./page/LevelKids";
 import { Register } from './page/Register'
 import { Registerkids } from "./page/RegisterKids";
 import { Userkids } from "./page/UserKids";
-import { LoginKids } from './page/Loginkids'
+import { LoginKids } from './page/Loginkids/Loginkids'
 
 function App() {
     return (
