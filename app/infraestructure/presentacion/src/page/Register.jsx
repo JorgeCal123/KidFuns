@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Logo } from "../Logo"
+import { Logo1 } from "./Logo1"
 import { Formulario, ContenedorBotonCentrado, Boton, MensajeExito, MensajeError } from '../elementos/Formularios';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faExclamationTriangle } from '@fortawesome/free-solid-svg-icons';
@@ -71,10 +71,9 @@ const Register = () => {
       cambiarFormularioValido(false);
     }
   }
-
   return (
     <main>
-      <Logo />
+      <Logo1 />
       <Formulario action="" onSubmit={onSubmit}>
         <Input
           estado={country}
