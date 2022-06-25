@@ -5,7 +5,7 @@ import { LevelKids } from "./page/LevelKids";
 import { Register } from './page/Register'
 import { Registerkids } from "./page/RegisterKids";
 import { Userkids } from "./page/UserKids";
-import { loginkids } from "./page/loginkids"
+import { LoginKids } from './page/Loginkids'
 
 function App() {
     return (
@@ -25,8 +25,8 @@ function App() {
             <Routes>
                 <Route path="/Levelkids" element={<LevelKids />} exact />
             </Routes>
-	    <Routes>
-                <Route path="/loginkids" element={<loginkids />} exact />
+            <Routes>
+                <Route path="/loginkids" element={<LoginKids />} exact />
             </Routes>
         </div>
     );
