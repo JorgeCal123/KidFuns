@@ -26,6 +26,11 @@ main {
 	height: auto;
 }
 
+.marco {
+	padding: 10px;
+	border: 4mm ridge rgba(211, 220, 50, .6);
+}
+
 @media (max-width: 300px) {
   .logoprincipal {
 	width: 100%;
