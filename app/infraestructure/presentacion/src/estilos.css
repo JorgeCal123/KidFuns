@@ -27,12 +27,8 @@ main {
 }
 
 @media (max-width: 300px) {
-  body {
-	width: 70%;
-  height: auto;
-  }
   .logoprincipal {
-	width: 200%;
+	width: 100%;
 	height: auto;
 }
 }
