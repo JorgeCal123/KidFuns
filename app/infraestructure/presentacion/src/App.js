@@ -1,10 +1,10 @@
 import * as React from "react";
 import { Routes, Route } from "react-router-dom";
-import { Home } from "./page/Home";
-import { LevelKids } from "./page/LevelKids";
-import { Register } from './page/Register'
-import { Registerkids } from "./page/RegisterKids";
-import { Userkids } from "./page/UserKids";
+import { Home } from "./page/Home/Home";
+import { LevelKids } from "./page/Levelkids/LevelKids";
+import { Register } from './page/Register/Register'
+import { Registerkids } from "./page/Registerkids/RegisterKids";
+import { Userkids } from "./page/Userkids/UserKids";
 import { LoginKids } from './page/Loginkids/Loginkids'
 
 function App() {
@@ -14,16 +14,16 @@ function App() {
                 <Route path="/" element={<Home />} exact />
             </Routes>
             <Routes>
-                <Route path="/Register" element={<Register />} exact />
+                <Route path="/register" element={<Register />} exact />
             </Routes>
             <Routes>
-                <Route path="/Registerkids" element={<Registerkids />} exact />
+                <Route path="/registerkids" element={<Registerkids />} exact />
             </Routes>
             <Routes>
-                <Route path="/Userkids" element={<Userkids />} exact />
+                <Route path="/userkids" element={<Userkids />} exact />
             </Routes>
             <Routes>
-                <Route path="/Levelkids" element={<LevelKids />} exact />
+                <Route path="/levelkids" element={<LevelKids />} exact />
             </Routes>
             <Routes>
                 <Route path="/loginkids" element={<LoginKids />} exact />
