@@ -7,10 +7,9 @@ const LoginKids = () => {
   return (
     <main>
         <div className="logo">
-            <img src= {logo1} alt="logokidfun" />
-
+            <img src= {logo1} alt="logokidfun" className="imgprincipal"/>
         </div>
-        <div className="logo">
+        <div className="but">
             <Buttonkids />
 
         </div>

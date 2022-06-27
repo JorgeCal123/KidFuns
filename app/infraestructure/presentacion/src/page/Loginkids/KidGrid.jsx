@@ -1,4 +1,7 @@
 import React, {useState, useEffect} from 'react'
+import { KidCard } from "./KidCard"
+import styles from "./estilosgrid.css"
+
 import logo1 from '../../image/avatar/1.png';
 import logo2 from '../../image/avatar/2.png';
 import logo3 from '../../image/avatar/3.png';
@@ -8,9 +11,6 @@ import logo6 from '../../image/avatar/6.png';
 import logo7 from '../../image/avatar/7.png';
 import logo8 from '../../image/avatar/8.png';
 import logo9 from '../../image/avatar/9.png';
-//const kid_response = document.querySelector("#app")
-//const tpl;
-
 
 
 export function KidGrid(props) {
@@ -33,16 +33,11 @@ export function KidGrid(props) {
     }, [])
 
     return (
-        <ul>
+        <ul className={styles.gridkid}>
             {   !kids ? 'cargando...' :
                 kids.map( (kid,index) => {
                     return (
-                    <li> 
-                        {kid.name}
-                        <button>
-                        <img src= {kid.avatar} alt="hola" />
-                        </button>
-                    </li>
+                    <KidCard key={ kid.id } kid={ kid } /> 
                     );
              })
             }

@@ -2,3 +2,24 @@
 body {
 	background-image: url('../.././image/fondos/fondo3.jpg');
 }
+
+.buttonkid {
+    list-style: none;
+    position: relative;
+    width: 150px;
+    height: 150px;
+    border-radius: 100%;
+}
+
+.imgbutton {
+    height: auto;
+    width: auto;
+    max-height: 100px;
+    max-width: 100px;
+}
+
+.gridkid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 110px);
+    gap: 40px;   
+}
