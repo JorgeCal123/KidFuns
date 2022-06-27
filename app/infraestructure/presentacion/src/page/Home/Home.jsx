@@ -5,6 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faExclamationTriangle } from '@fortawesome/free-solid-svg-icons';
 import Input from '../../componentes/Input';
 import { useNavigate } from 'react-router-dom';
+import './Home.css'
 
 
 const Home = () => {

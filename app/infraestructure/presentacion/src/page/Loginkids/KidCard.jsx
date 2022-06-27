@@ -1,4 +1,4 @@
-import styles from'./estilos.css'
+import styles from'./Loginkids.css'
 
 export function KidCard({kid}) {
 
