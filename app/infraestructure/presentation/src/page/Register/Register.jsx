@@ -7,13 +7,14 @@ import Input from '../../componentes/Input'
 import { useNavigate } from 'react-router-dom';
 
 const Register = () => {
+  let history = useNavigate();
   const [country, cambiarCountry] = useState({ campo: '', valido: null });
   const [name, cambiarName] = useState({ campo: '', valido: null });
   const [email, cambiarEmail] = useState({ campo: '', valido: null });
   const [formularioValido, cambiarFormularioValido] = useState(null);
   const [password, cambiarPassword] = useState({ campo: '', valido: null });
   const [password2, cambiarPassword2] = useState({ campo: '', valido: null });
-  const navigate = useNavigate();
+
   const expresiones = {
     country: /^[a-zA-ZÀ-ÿ\s]{1,40}$/, // Letras, numeros, guion y guion_bajo
     name: /^[a-zA-ZÀ-ÿ\s]{2,40}$/, // Letras y espacios, pueden llevar acentos.
@@ -52,25 +53,35 @@ const Register = () => {
       cambiarPassword2({ campo: '', valido: null });
 
       // envio de datos
-      console.log('hola')
       const requestOptions = {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           country: country['campo'],
-          name:  name['campo'],
+          name: name['campo'],
           email: email['campo'],
           password: password['campo'],
-      })
-    };
-    fetch('http://127.0.0.1:8000/user/', requestOptions)
-        .then(response => response.json())
-        .then(data => console.log('repuesta', data));
+        })
+      };
+
+      fetch('http://127.0.0.1:8000/user/', requestOptions)
+        .then(response => {
+
+          if (response.status === 201)
+            return response.json()
+          else { throw new Error(response.status) };
+
+        })
+        .then(data => {
+          history('/registerkids', { state: { id_user: data.id } });
+        })
+
 
     } else {
-      cambiarFormularioValido(false);
+      //cambiarFormularioValido(false);
     }
   }
+
   return (
     <main>
       <Logo1 />
@@ -94,7 +105,7 @@ const Register = () => {
           name="country"
           leyendaError="El name solo puede contener letras y espacios."
           expresionRegular={expresiones.name}
-        />       
+        />
         <Input
           estado={email}
           cambiarEstado={cambiarEmail}
@@ -131,7 +142,7 @@ const Register = () => {
           </p>
         </MensajeError>}
         <ContenedorBotonCentrado>
-          <Boton type="submit" onClick={() => navigate('/Registerkids')}>Enviar</Boton>
+          <Boton type="submit" onClick>Enviar</Boton>
           {formularioValido === true && <MensajeExito>Formulario enviado exitosamente!</MensajeExito>}
         </ContenedorBotonCentrado>
       </Formulario>

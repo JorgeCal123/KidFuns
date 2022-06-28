@@ -1,54 +1,60 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Logo } from "../../Logo"
 import { Formulario, ContenedorBotonCentrado, Boton, MensajeExito, MensajeError } from '../../elementos/Formularios';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faExclamationTriangle } from '@fortawesome/free-solid-svg-icons';
 import Input from '../../componentes/Input';
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 
-const Registerkids = () => {
+const Registerkids = (props) => {
   const [name, cambiarName] = useState({ campo: '', valido: null });
   const [age, cambiarAge] = useState({ campo: '', valido: null });
-  //const [avatar, cambiaraAvatar] = useState({ campo: '', valido: null });
+  const [avatar, cambiarAvatar] = useState({ campo: '', valido: null });
   const [formularioValido, cambiarFormularioValido] = useState(null);
+  const location = useLocation();
   const navigate = useNavigate();
+  const [id_user, setId_user] = useState(location.state.id_user);
   const expresiones = {
-    country: /^[a-zA-ZÀ-ÿ\s]{1,40}$/, // Letras, numeros, guion y guion_bajo
     name: /^[a-zA-ZÀ-ÿ\s]{2,40}$/, // Letras y espacios, pueden llevar acentos.
-    age: /^[0-9]{1,2}$/
-    //avatar: pendiente
-   
+    age: /^[0-9]{1,2}$/,
+    avatar: /^[a-zA-ZÀ-ÿ\s]{2,40}$/
+
   }
-  
-  
+  useEffect(() => {
+    console.log("antes del user");
+    setId_user(location.state.id_user)
+    console.log("en kids" + id_user);
+  }, [location]);
+
   const onSubmit = (e) => {
     e.preventDefault();
 
     if (
       name.valido === 'true' &&
-      age.valido === 'true' 
-      //avatar.valido === 'true'
-      
+      age.valido === 'true' &&
+      avatar.valido === 'true'
+
     ) {
       cambiarFormularioValido(true);
       cambiarName({ campo: '', valido: null });
       cambiarAge({ campo: '', valido: null });
-      //cambiarAvatar({ campo: '', valido: null });
-    
+      cambiarAvatar({ campo: '', valido: null });
+
       // envio de datos
       console.log('hola')
       const requestOptions = {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          name:  name['campo'],
+          name: name['campo'],
           age: age['campo'],
-          //avatar: avatar['campo'],
-      })
-    };
-    fetch('http://127.0.0.1:8000/kid/', requestOptions)
+          avatar: avatar['campo'],
+          user_id: { id_user }
+        })
+      };
+      fetch('http://127.0.0.1:8000/kid/', requestOptions)
         .then(response => response.json())
-        .then(data => console.log('repuesta', data));
+        .then(data => console.log('respuesta', data));
 
     } else {
       cambiarFormularioValido(false);
@@ -78,17 +84,17 @@ const Registerkids = () => {
           name="age"
           leyendaError="cual es la edad."
           expresionRegular={expresiones.age}
-        />       
-        {/*<Input
+        />
+        <Input
           estado={avatar}
           cambiarEstado={cambiarAvatar}
           tipo="img"
           label="avatar"
           name="avatar"
           leyendaError="selecciona un avatar."
-          
+          expresionRegular={expresiones.avatar}
         />
-  */}
+
         {formularioValido === false && <MensajeError>
           <p>
             <FontAwesomeIcon icon={faExclamationTriangle} />
