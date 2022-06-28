@@ -1,0 +1,52 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Mr+Dafoe&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Exo:wght@900&display=swap');
+* {
+	box-sizing: border-box;
+}
+
+body {
+	/*background-image: url('./image/fondos/fondo1.jpg');*/
+	background-repeat: no-repeat;
+	background-size: cover;
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+main {
+	max-width: 800px;
+	width: 80%;
+	margin: auto;
+	padding: 40px;
+}
+
+.logoprincipal {
+	width: 100%;
+	height: auto;
+}
+
+.marco {
+	padding: 10px;
+	border: 4mm ridge rgba(211, 220, 50, .6);
+}
+h2 {
+ font-family:Georgia,serif;
+ color:#3D14F8;
+ font-size:30px;
+ }
+
+ p {
+ font-family:Georgia,serif;
+ color:#7A378F;
+ font-size:20px;
+
+ }
+
+@media (max-width: 300px) {
+  .logoprincipal {
+	width: 100%;
+	height: auto;
+}
+}
