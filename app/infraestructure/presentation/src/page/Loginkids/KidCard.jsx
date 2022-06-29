@@ -1,14 +1,13 @@
-import styles from'./Loginkids.css'
+//import styles from'./Loginkids.css'
+import React from 'react'
+import Axios from 'axios';
+export function KidCard(props) {
 
-export function KidCard({kid}) {
-
-    //const imageurl = "https://image.tmdb.org/t/p/w100" + kid.avatar;
     return (
         <div>
-            <button className='buttonkid'>
-                <img width={120} height={120} className={styles.imgbutton} src= {kid.avatar} alt="hola" />
-            </button>
-            {kid.name}
+            hola funciona
+            item:[id] 
+            typeof {props.item.id}
         </div>
     );
 }
