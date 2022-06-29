@@ -1,75 +1,49 @@
 import React, {useState, useEffect} from 'react'
 import { KidCard } from "./KidCard"
-import styles from "./estilosgrid.css"
-
-import logo1 from '../../image/avatar/1.png';
-import logo2 from '../../image/avatar/2.png';
-import logo3 from '../../image/avatar/3.png';
-import logo4 from '../../image/avatar/4.png';
-import logo5 from '../../image/avatar/5.png';
-import logo6 from '../../image/avatar/6.png';
-import logo7 from '../../image/avatar/7.png';
-import logo8 from '../../image/avatar/8.png';
-import logo9 from '../../image/avatar/9.png';
+import Axios from 'axios';
+import styles from'./Loginkids.css'
 
 
-export function KidGrid(props) {
-    const data = [
-        {id:1, name:'Juan1', avatar:logo1 },
-        {id:2, name:'Juan2', avatar:logo2 },
-        {id:3, name:'Juan3', avatar:logo3 },
-        {id:4, name:'Juan3', avatar:logo4 },
-        {id:5, name:'Juan3', avatar:logo5 },
-        {id:6, name:'Juan3', avatar:logo6 },
-        {id:7, name:'Juan3', avatar:logo7 },
-        {id:8, name:'Juan3', avatar:logo8 },
-        {id:9, name:'Juan3', avatar:logo9 }
+function GetImage(props) {
 
-    ]
-    const [kids, setKids] = useState()
+const a =("../.." + props.ruta);
+console.log(a);
+const image = require("../../image/avatar/1.png");
 
-    useEffect(() => {
-        setKids(data)
-    }, [])
+    return (    
+        <div>
+            <img src ={require("../../image/avatar/1.png")} alt="hola" />
+            <img src ={require("../.." + props.ruta)} alt="" />
 
-    return (
-        <ul className={styles.gridkid}>
-            {   !kids ? 'cargando...' :
-                kids.map( (kid,index) => {
-                    return (
-                    <KidCard key={ kid.id } kid={ kid } /> 
-                    );
-             })
-            }
-        </ul>       
-    );
+        </div>
+);
 }
 
-
-
-/**
 export function KidGrid(props) {
-    const API_URL = "http://44.204.57.239:8000/kid/"
-    const [kids, setKids] = useState()
-    const fetchApi = async () => {
-        const response = await fetch(API_URL, {mode: 'no-cors'})
-        const responseJSON = await response.json()
-        setKids=(responseJSON)
-        console.log(kids);
-    }
-    useEffect(() => {
-        fetchApi()
-    }, [])
 
-    return (
-        <ul>
-            {   !kids ? 'cargando...' :
-                kids.map( (kid,index) => {
-                    return <li key = {kid.id}> kid: {kid.name} </li>
-             })
-            }
-        </ul>
-    );
+  const [list, setList] = useState([]);
+  useEffect(() => {
+    Axios({
+      url: "http://44.204.57.239:8000/kid/",
+    })
+      .then((response) => {
+        setList(response.data);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, [setList]);
+
+  return (
+    <div className="App">
+      <ul>
+        {list.map((item) => (
+          <button key={item.id}>
+           {item.name}
+            <GetImage ruta={item.avatar} />
+          </button>
+        ))}
+      </ul>
+    </div>
+  );
 }
-
-**/
