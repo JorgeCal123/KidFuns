@@ -6,6 +6,7 @@ import { Register } from './page/Register/Register'
 import { Registerkids } from "./page/Registerkids/RegisterKids";
 import { Userkids } from "./page/Userkids/UserKids";
 import { LoginKids } from './page/Loginkids/Loginkids'
+import { Level } from "./page/Level/LevelExercise";
 
 function App() {
     return (
@@ -27,6 +28,9 @@ function App() {
             </Routes>
             <Routes>
                 <Route path="/loginkids" element={<LoginKids />} exact />
+            </Routes>
+            <Routes>
+                <Route path="/levelexcercice" element={<Level />} exact />
             </Routes>
         </div>
     );
