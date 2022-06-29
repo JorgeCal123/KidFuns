@@ -1,11 +1,12 @@
 import logo from '../../image/logos/logo7-4.PNG'
-import lettera from '../../image/letter/a.png'
+import lettera from '../../image/abecedario/a.png'
 import micro from '../../image/logos/microphone.png'
 import speaker from '../../image/logos/speaker.png'
 import speaker1 from '../../image/logos/speaker2.png'
 import conejo from '../../image/animales/conejo4.png'
 import conejo1 from '../../image/animales/conejo5.png'
 import conejo2 from '../../image/animales/conejo6.png'
+import marco from '../../image/recursos/marco.png'
 import { Formulario } from '../../elementos/Formularios1'
 import CanvasDraw from 'react-canvas-draw'
 
@@ -24,7 +25,7 @@ function WeekDays(props) {
                         <img src={ speaker } alt='Kidfuns' className='logoa'/>
                     </div>
                     <p>Presiona</p>
-                    <img src={ micro } alt='Kidfuns' className='logoa'/>
+                    <button type='button'><img src={ micro } alt='Kidfuns' className='logoa'/></button>
                 </div>
                 <div>
                     <img src={ conejo } alt='Kidfuns' className='logoprincipal'/>
@@ -61,21 +62,13 @@ function WeekDays(props) {
                     <div>
                         <img src={ lettera} alt='Kidfuns' className='logoa'/>
                         <p>Dibuja</p>
-                        <CanvasDraw brushRadius={3} brushColor={'red'}/>
+                        <CanvasDraw brushRadius={3} brushColor={'red'} imgSrc={ marco }/>
                     </div>
                 </div>
                 <div>
                     <img src={ conejo2 } alt='Kidfuns'/>
                 </div>
             </Formulario>)
-        case 4:
-            return <h2>Today is Tuesday</h2>
-        case 5:
-            return <h2>Today is Wednesday</h2>
-        case 6:
-            return <h2>Today is Thursday</h2>
-        case 7:
-            return <h2>Today is Friday</h2>
         default:
             return <h2>Invalid Input</h2>
     }

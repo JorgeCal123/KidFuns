@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react'
 import { KidCard } from "./KidCard"
 import Axios from 'axios';
-import styles from'./Loginkids.css'
+//import styles from'./Loginkids.css'
 
 
 function GetImage(props) {

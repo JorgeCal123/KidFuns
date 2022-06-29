@@ -1,7 +1,7 @@
 import React from 'react'
 import logo1 from '../../image/logos/logo7-3.PNG';
 import { Buttonkids } from "./Perfil"
-import './Loginkids.css'
+//import './Loginkids.css'
 
 const LoginKids = () => {
   return (
