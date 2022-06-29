@@ -25,7 +25,14 @@ const Registerkids = (props) => {
     setId_user(location.state.id_user)
     console.log("en kids" + id_user);
   }, [location]);
-
+  function listakid(){
+    const dic = {
+      name :name,
+      age : age,
+      avatar : avatar,
+      
+    }
+  }
   const onSubmit = (e) => {
     e.preventDefault();
 
@@ -41,7 +48,6 @@ const Registerkids = (props) => {
       cambiarAvatar({ campo: '', valido: null });
 
       // envio de datos
-      console.log('hola')
       const requestOptions = {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -49,9 +55,10 @@ const Registerkids = (props) => {
           name: name['campo'],
           age: age['campo'],
           avatar: avatar['campo'],
-          user_id: { id_user }
+          user: id_user
         })
       };
+      console.log(requestOptions);
       fetch('http://127.0.0.1:8000/kid/', requestOptions)
         .then(response => response.json())
         .then(data => console.log('respuesta', data));
