@@ -67,7 +67,9 @@ function WeekDays(props) {
                     <BotonCentrado>
                         <img src={ lettera} alt='Kidfuns' className='logoa'/>
                         <p>Dibuja</p>
-                        <CanvasDraw brushRadius={3} brushColor={'red'} imgSrc={ marco }/>
+                        <div>
+                            <CanvasDraw brushRadius={3} brushColor={'red'} imgSrc={ marco }/>
+                        </div>
                     </BotonCentrado>
                 </BotonCentrado>
                 <div>
