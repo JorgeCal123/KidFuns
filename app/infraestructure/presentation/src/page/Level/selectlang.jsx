@@ -8,7 +8,7 @@ import conejo1 from '../../image/animales/conejo5.png'
 import conejo2 from '../../image/animales/conejo6.png'
 import marco from '../../image/recursos/marco.png'
 import CanvasDraw from 'react-canvas-draw'
-import { BotonCentrado } from '../../elementos/Formularios1'
+import { BotonCentrado, Formulario } from '../../elementos/Formularios1'
 function WeekDays(props) {
     switch (props.value) {
         case 'a1':
@@ -19,14 +19,21 @@ function WeekDays(props) {
                         <img src={ logo } alt='Kidfuns' className='logoprincipal'/>
                     </header>
                 </div>
-                <div>
-                    <p>Repite</p>
-                    <div>
-                            <img src={ lettera} alt='Kidfuns' className='logoa'/>
-                            <img src={ speaker } alt='Kidfuns' className='sonido'/>
+                <div className='level1'>
+                    <div class="content">
+                        <p class="text_shadows">Repite</p>
                     </div>
-                    <p>Presiona</p>
-                    <button type='button'><img src={ micro } alt='Kidfuns' className='sonido'/></button>
+                    <Formulario>
+                            <img src={ lettera} alt='Kidfuns' className='lettera'/>
+                            <div>
+                                 <img src={ speaker } alt='Kidfuns' className='speaker1'/>
+                            </div>
+                           
+                    </Formulario>
+                    <div class="content">
+                        <p class="text_shadows">Presiona</p>
+                    </div>
+                    <button type='button' className='button5'><img src={ micro } alt='Kidfuns' className='speaker1'/></button>
                 </div>
                 <div>
                     <img src={ conejo } alt='Kidfuns' className='logoprincipal'/>
@@ -43,7 +50,7 @@ function WeekDays(props) {
                 </div>
                 <BotonCentrado>
                     <BotonCentrado>
-                        <img src={ speaker1 } alt='Kidfuns' className='sonido'/>
+                        <img src={ speaker1 } alt='Kidfuns'/>
                         <p>Selecciona la correcta</p>
                         <button type="button">a</button>
                         <button type="button">z</button>
