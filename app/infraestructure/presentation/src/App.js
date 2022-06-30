@@ -6,7 +6,7 @@ import { Register } from './page/Register/Register'
 import { Registerkids } from "./page/Registerkids/RegisterKids";
 import { Userkids } from "./page/Userkids/UserKids";
 import { LoginKids } from './page/Loginkids/Loginkids'
-import { Level } from "./page/Level/LevelLang";
+import { Level } from "./page/Level/MainLevel";
 
 function App() {
     return (
