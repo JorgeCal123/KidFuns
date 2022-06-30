@@ -13,7 +13,7 @@ const image = require("../../image/avatar/1.png");
     return (    
         <div>
             <img src ={require("../../image/avatar/1.png")} alt="hola" />
-            <img src ={require("../.." + props.ruta)} alt="" />
+            {/*<img src ={require("../.." + props.ruta)} alt="" />*/}
 
         </div>
 );

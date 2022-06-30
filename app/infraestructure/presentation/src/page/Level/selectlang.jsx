@@ -7,68 +7,73 @@ import conejo from '../../image/animales/conejo4.png'
 import conejo1 from '../../image/animales/conejo5.png'
 import conejo2 from '../../image/animales/conejo6.png'
 import marco from '../../image/recursos/marco.png'
-import { Formulario } from '../../elementos/Formularios1'
 import CanvasDraw from 'react-canvas-draw'
-
+import { BotonCentrado } from '../../elementos/Formularios1'
 function WeekDays(props) {
     switch (props.value) {
-        case 1:
+        case 'a1':
             return (
-            <Formulario>
-                <div className='two'>
-                    <img src={ logo } alt='Kidfuns'/>
+            <main className='level1'>
+                <div>
+                    <header className="App-header">
+                        <img src={ logo } alt='Kidfuns' className='logoprincipal'/>
+                    </header>
                 </div>
                 <div>
                     <p>Repite</p>
                     <div>
-                        <img src={ lettera } alt='Kidfuns' className='logoa'/>
-                        <img src={ speaker } alt='Kidfuns' className='logoa'/>
+                            <img src={ lettera} alt='Kidfuns' className='logoa'/>
+                            <img src={ speaker } alt='Kidfuns' className='sonido'/>
                     </div>
                     <p>Presiona</p>
-                    <button type='button'><img src={ micro } alt='Kidfuns' className='logoa'/></button>
+                    <button type='button'><img src={ micro } alt='Kidfuns' className='sonido'/></button>
                 </div>
                 <div>
                     <img src={ conejo } alt='Kidfuns' className='logoprincipal'/>
                 </div>
-            </Formulario>
+            </main>
             )
-        case 2:
+        case 'a2':
             return (
-            <Formulario>
-                <div className='two'>
-                    <img src={ logo } alt='Kidfuns'/>
-                </div>
+            <main className='level1'>
                 <div>
-                    <div>
-                        <img src={ speaker1 } alt='Kidfuns' className='logoa'/>
+                    <header>
+                        <img src={ logo } alt='Kidfuns' className='logoprincipal'/>
+                    </header>
+                </div>
+                <BotonCentrado>
+                    <BotonCentrado>
+                        <img src={ speaker1 } alt='Kidfuns' className='sonido'/>
                         <p>Selecciona la correcta</p>
                         <button type="button">a</button>
                         <button type="button">z</button>
                         <button type="button">m</button>
-                    </div>
-                </div>
+                    </BotonCentrado>
+                </BotonCentrado>
                 <div>
-                    <img src={ conejo1 } alt='Kidfuns'/>
+                    <img src={ conejo1 } alt='Kidfuns' className='logoprincipal'/>
                 </div>
-            </Formulario>
+            </main>
             )
-        case 3:
+        case 'a3':
             return ( 
-            <Formulario>
-                <div className='two'>
-                    <img src={ logo } alt='Kidfuns'/>
-                </div>
+            <main className='level1'>
                 <div>
-                    <div>
+                    <header>
+                        <img src={ logo } alt='Kidfuns' className='logoprincipal'/>
+                    </header>
+                </div>
+                <BotonCentrado>
+                    <BotonCentrado>
                         <img src={ lettera} alt='Kidfuns' className='logoa'/>
                         <p>Dibuja</p>
                         <CanvasDraw brushRadius={3} brushColor={'red'} imgSrc={ marco }/>
-                    </div>
-                </div>
+                    </BotonCentrado>
+                </BotonCentrado>
                 <div>
-                    <img src={ conejo2 } alt='Kidfuns'/>
+                    <img src={ conejo2 } alt='Kidfuns' className='logoprincipal'/>
                 </div>
-            </Formulario>)
+            </main>)
         default:
             return <h2>Invalid Input</h2>
     }

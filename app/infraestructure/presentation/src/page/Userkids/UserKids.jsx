@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Logo } from "../../Logo"
+import Logo from "../../image/logos/logo_principal.png"
 import { Formulario, Label, ContenedorTerminos, ContenedorBotonCentrado, Boton, MensajeExito, MensajeError } from '../../elementos/Formularios';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faExclamationTriangle } from '@fortawesome/free-solid-svg-icons';
@@ -69,7 +69,11 @@ const Userkids = () => {
 
   return (
     <main>
-      <Logo />
+      <div className="App">
+            <header className="App-header">
+                <img className="logoprincipal" src={Logo} alt="hola" />
+            </header>
+      </div>
       <Formulario action="" onSubmit={onSubmit}>
         <Input
           estado={usuario}
