@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react'
 import { KidCard } from "./KidCard"
 import Axios from 'axios';
-import styles from'./Loginkids.css'
+//import styles from'./Loginkids.css'
 
 
 function GetImage(props) {
@@ -13,7 +13,7 @@ const image = require("../../image/avatar/1.png");
     return (    
         <div>
             <img src ={require("../../image/avatar/1.png")} alt="hola" />
-            <img src ={require("../.." + props.ruta)} alt="" />
+            {/*<img src ={require("../.." + props.ruta)} alt="" />*/}
 
         </div>
 );

@@ -1,81 +1,88 @@
 import logo from '../../image/logos/logo7-4.PNG'
-import lettera from '../../image/letter/a.png'
+import lettera from '../../image/abecedario/a.png'
 import micro from '../../image/logos/microphone.png'
 import speaker from '../../image/logos/speaker.png'
 import speaker1 from '../../image/logos/speaker2.png'
 import conejo from '../../image/animales/conejo4.png'
 import conejo1 from '../../image/animales/conejo5.png'
 import conejo2 from '../../image/animales/conejo6.png'
-import { Formulario } from '../../elementos/Formularios1'
+import marco from '../../image/recursos/marco.png'
 import CanvasDraw from 'react-canvas-draw'
-
+import { BotonCentrado, Formulario } from '../../elementos/Formularios1'
 function WeekDays(props) {
     switch (props.value) {
-        case 1:
+        case 'a1':
             return (
-            <Formulario>
-                <div className='two'>
-                    <img src={ logo } alt='Kidfuns'/>
-                </div>
+            <main className='level1'>
                 <div>
-                    <p>Repite</p>
-                    <div>
-                        <img src={ lettera } alt='Kidfuns' className='logoa'/>
-                        <img src={ speaker } alt='Kidfuns' className='logoa'/>
+                    <header className="App-header">
+                        <img src={ logo } alt='Kidfuns' className='logoprincipal'/>
+                    </header>
+                </div>
+                <div className='level1'>
+                    <div class="content">
+                        <p class="text_shadows">Repite</p>
                     </div>
-                    <p>Presiona</p>
-                    <img src={ micro } alt='Kidfuns' className='logoa'/>
+                    <Formulario>
+                            <img src={ lettera} alt='Kidfuns' className='lettera'/>
+                            <div>
+                                 <img src={ speaker } alt='Kidfuns' className='speaker1'/>
+                            </div>
+                           
+                    </Formulario>
+                    <div class="content">
+                        <p class="text_shadows">Presiona</p>
+                    </div>
+                    <button type='button' className='button5'><img src={ micro } alt='Kidfuns' className='speaker1'/></button>
                 </div>
                 <div>
                     <img src={ conejo } alt='Kidfuns' className='logoprincipal'/>
                 </div>
-            </Formulario>
+            </main>
             )
-        case 2:
+        case 'a2':
             return (
-            <Formulario>
-                <div className='two'>
-                    <img src={ logo } alt='Kidfuns'/>
-                </div>
+            <main className='level1'>
                 <div>
-                    <div>
-                        <img src={ speaker1 } alt='Kidfuns' className='logoa'/>
+                    <header>
+                        <img src={ logo } alt='Kidfuns' className='logoprincipal'/>
+                    </header>
+                </div>
+                <BotonCentrado>
+                    <BotonCentrado>
+                        <img src={ speaker1 } alt='Kidfuns'/>
                         <p>Selecciona la correcta</p>
                         <button type="button">a</button>
                         <button type="button">z</button>
                         <button type="button">m</button>
-                    </div>
-                </div>
+                    </BotonCentrado>
+                </BotonCentrado>
                 <div>
-                    <img src={ conejo1 } alt='Kidfuns'/>
+                    <img src={ conejo1 } alt='Kidfuns' className='logoprincipal'/>
                 </div>
-            </Formulario>
+            </main>
             )
-        case 3:
+        case 'a3':
             return ( 
-            <Formulario>
-                <div className='two'>
-                    <img src={ logo } alt='Kidfuns'/>
-                </div>
+            <main className='level1'>
                 <div>
-                    <div>
+                    <header>
+                        <img src={ logo } alt='Kidfuns' className='logoprincipal'/>
+                    </header>
+                </div>
+                <BotonCentrado>
+                    <BotonCentrado>
                         <img src={ lettera} alt='Kidfuns' className='logoa'/>
                         <p>Dibuja</p>
-                        <CanvasDraw brushRadius={3} brushColor={'red'}/>
-                    </div>
-                </div>
+                        <div>
+                            <CanvasDraw brushRadius={3} brushColor={'red'} imgSrc={ marco }/>
+                        </div>
+                    </BotonCentrado>
+                </BotonCentrado>
                 <div>
-                    <img src={ conejo2 } alt='Kidfuns'/>
+                    <img src={ conejo2 } alt='Kidfuns' className='logoprincipal'/>
                 </div>
-            </Formulario>)
-        case 4:
-            return <h2>Today is Tuesday</h2>
-        case 5:
-            return <h2>Today is Wednesday</h2>
-        case 6:
-            return <h2>Today is Thursday</h2>
-        case 7:
-            return <h2>Today is Friday</h2>
+            </main>)
         default:
             return <h2>Invalid Input</h2>
     }

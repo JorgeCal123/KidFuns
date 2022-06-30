@@ -3,7 +3,7 @@ import { WeekDays } from "./selectlang";
 
 
 const Level = () => {
-    const state = 3
+    const state = 'a1'
       return (
     <div> 
          <WeekDays value={state} />
