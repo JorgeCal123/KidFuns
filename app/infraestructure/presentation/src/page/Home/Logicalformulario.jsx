@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faExclamationTriangle } from '@fortawesome/free-solid-svg-icons';
 import Input from '../../componentes/Input';
 
-function Logical (){
+export function Logica (){
   const [password, cambiarPassword] = useState({ campo: '', valido: null });
   const [correo, cambiarCorreo] = useState({ campo: '', valido: null });
   const [formularioValido, cambiarFormularioValido] = useState(null);
@@ -63,6 +63,8 @@ function Logical (){
             <b>Error:</b> Por favor rellena el formulario correctamente.
           </p>
         </MensajeError>}
+
+        
         <ContenedorBotonCentrado>
           <Boton type="submit">Ingresar</Boton>
           {formularioValido === true && <MensajeExito>Formulario enviado exitosamente!</MensajeExito>}
@@ -71,4 +73,3 @@ function Logical (){
     )
 }
 
-export { Logical };

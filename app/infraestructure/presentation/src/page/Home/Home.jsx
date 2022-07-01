@@ -1,8 +1,9 @@
 import { useNavigate } from 'react-router-dom';
 import Logo from "../../image/logos/logo_principal.png"
-import { Boton } from '../../elementos/Formularios';
-import { Logical } from './Logicalformulario';
+import { Boton, Formulario } from '../../elementos/Formularios';
+import { Logica } from './Logicalformulario';
 import './Home.css'
+import { Formulario_user } from './formulario';
 
 
 const Home = () => {
@@ -14,7 +15,7 @@ const Home = () => {
                 <img className="logoprincipal" src={Logo} alt="hola" />
             </header>
         </div>
-      <Logical/>
+      <Formulario_user />
       <Boton onClick={() => navigate('/Register')}>
         Registrate
       </Boton>
