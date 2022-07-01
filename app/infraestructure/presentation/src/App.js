@@ -7,6 +7,7 @@ import { Registerkids } from "./page/Registerkids/RegisterKids";
 import { Userkids } from "./page/Userkids/UserKids";
 import { LoginKids } from './page/Loginkids/Loginkids'
 import { Level } from "./page/Level/MainLevel";
+import { Result } from "./page/Result/Result";
 
 function App() {
     return (
@@ -31,6 +32,9 @@ function App() {
             </Routes>
             <Routes>
                 <Route path="/levelexcercice" element={<Level />} exact />
+            </Routes>
+            <Routes>
+                <Route path="/result" element={<Result />} exact />
             </Routes>
         </div>
     );
