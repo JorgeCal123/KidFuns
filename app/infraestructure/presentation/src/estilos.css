@@ -150,3 +150,13 @@ main {
   }
 }
 
+.my-custom-scrollbar {
+position: relative;
+width: auto;
+overflow-x: scroll;
+overflow-y: scroll;
+overflow-wrap: break-word;
+}
+.table-wrapper-scroll-y {
+display: block;
+}

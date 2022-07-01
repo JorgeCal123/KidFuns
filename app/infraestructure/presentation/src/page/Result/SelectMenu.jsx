@@ -18,6 +18,13 @@ function SelectMenu() {
             </optgroup>
         </Select>
       </FormControl>
+    </div>
+  );
+}
+
+function SelectMenu2() {
+  return (
+    <div>
       <FormControl sx={{ m: 1, minWidth: 120 }}>
         <InputLabel htmlFor="grouped-select">Nivel</InputLabel>
         <Select defaultValue="" id="grouped-select" label="Grouping">
@@ -34,4 +41,4 @@ function SelectMenu() {
   );
 }
 
-export { SelectMenu };
+export { SelectMenu, SelectMenu2 };
