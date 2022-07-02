@@ -1,6 +1,7 @@
 import imagen from '../../image/logos/logo7-4.PNG'
 import imagen2 from '../../image/animales/osito1.png'
-import { Boton, Formulario } from '../../elementos/Formularios1';
+import { Boton, Formulario } from '../../elementos_formulario/Formularios1'
+;
 const LevelKids = () => {
  
   return (

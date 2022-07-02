@@ -16,8 +16,9 @@ const Formulario = styled.form`
 	grid-template-columns: 1fr;
 	gap: 20px;
 
-	@media (max-width: 800px){
+	@media (min-width: 800px){
 		grid-template-columns: 1fr;
+
 	}
 `;
 const Formulario2 = styled.form`
@@ -36,6 +37,7 @@ const Label = styled.label`
 	padding: 10px;
 	min-height: 40px;
 	cursor: pointer;
+	left: 20%;
 
 	${props => props.valido === 'false' && css`
 		color: ${colores.error};
@@ -45,6 +47,7 @@ const Label = styled.label`
 const GrupoInput = styled.div`
 	position: relative;
 	z-index: 90;
+
 `;
 
 /** estilos de un label:
@@ -64,6 +67,31 @@ const GrupoInput = styled.div`
  * box-shadow = agrega una sombra 
 */
 const Input = styled.input`
+	width: 70%; 
+	background: #fff;
+	border-radius: 3px;
+	height: 45px;
+	line-height: 45px;
+	padding: 0 40px 0 10px;
+	transition: .3s ease all;
+	border: 3px solid transparent;
+
+	&:focus {
+		border: 3px solid ${colores.borde};
+		outline: none;
+		box-shadow: 3px 0px 30px rgba(163,163,163, 0.4);
+	}
+
+	${props => props.valido === 'true' && css`
+		border: 3px solid transparent;
+	`}
+
+	${props => props.valido === 'false' && css`
+		border: 3px solid ${colores.error} !important;
+	`}
+`;
+
+const Input2 = styled.input`
 	width: 100%; 
 	background: #fff;
 	border-radius: 3px;
@@ -94,6 +122,7 @@ const Input = styled.input`
  * color: coloca un color rojo
  * display: None para que no se muestre por defecto;
 */
+
 const LeyendaError = styled.p`
 	font-size: 12px;
 	margin-bottom: 0;
@@ -102,6 +131,7 @@ const LeyendaError = styled.p`
 
 	${props => props.valido === 'true' && css`
 		display: none;
+	
 	`}
 
 	${props => props.valido === 'false' && css`
@@ -119,13 +149,14 @@ const LeyendaError = styled.p`
 */
 
 const IconoValidacion = styled(FontAwesomeIcon)`
+	width: 70%; 
 	position: absolute;
 	right: 10px;
 	bottom: 14px;
 	z-index: 100;
 	font-size: 16px;
 	opacity: 0;
-
+	
 	${props => props.valido === 'false' && css`
 		opacity: 1;
 		color: ${colores.error};
@@ -228,6 +259,7 @@ const MensajeExito = styled.p`
  * padding margenes
  * grid colum abarque 2 columnas
  * margin de 0 para que no se desfase el elemento
+ * marigin left para darle espacio entre el texto y el icono
  */
 const MensajeError = styled.div`
 	height: 45px;

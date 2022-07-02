@@ -1,4 +1,4 @@
-import { Formulario } from '../../elementos/Formularios1'
+import { Formulario } from '../../elementos_formulario/Formularios1'
 import logo from '../../image/logos/logo7-4.PNG'
 import lettera from '../../image/abecedario/a.png'
 import micro from '../../image/logos/microphone.png'

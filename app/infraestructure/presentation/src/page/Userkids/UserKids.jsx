@@ -1,9 +1,9 @@
 import { useState } from 'react';
 import Logo from "../../image/logos/logo_principal.png"
-import { Formulario, Label, ContenedorTerminos, ContenedorBotonCentrado, Boton, MensajeExito, MensajeError } from '../../elementos/Formularios';
+import { Formulario, Label, ContenedorTerminos, ContenedorBotonCentrado, Boton, MensajeExito, MensajeError } from '../../elementos_formulario/Formularios';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faExclamationTriangle } from '@fortawesome/free-solid-svg-icons';
-import Input from '../../componentes/Input';
+import Input from '../../componentes_formularios/Input';
 
 const Userkids = () => {
   const [usuario, cambiarUsuario] = useState({ campo: '', valido: null });

@@ -4,7 +4,8 @@ import lettera from '../../image/abecedario/a.png'
 import conejo2 from '../../image/animales/conejo6.png'
 import marco from '../../image/recursos/marco.png'
 import CanvasDraw from 'react-canvas-draw'
-import { BotonCentrado } from '../../elementos/Formularios1'
+import { BotonCentrado } from '../../elementos_formulario/Formularios1'
+
 
 function Level3({ materia }) {
     switch (materia) {

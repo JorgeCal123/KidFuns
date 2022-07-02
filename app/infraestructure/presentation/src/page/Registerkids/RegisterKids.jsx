@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import Logo from "../../image/logos/logo_principal.png"
-import { Formulario, ContenedorBotonCentrado, Boton, MensajeExito, MensajeError } from '../../elementos/Formularios';
+import { Formulario, ContenedorBotonCentrado, Boton, MensajeExito, MensajeError } from '../../elementos_formulario/Formularios';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faExclamationTriangle } from '@fortawesome/free-solid-svg-icons';
-import Input from '../../componentes/Input';
+import Input from '../../componentes_formularios/Input';
 import { useLocation, useNavigate } from 'react-router-dom';
 
 const Registerkids = (props) => {
