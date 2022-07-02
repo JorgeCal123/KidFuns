@@ -1,5 +1,8 @@
 import React from "react";
 import useUser from "./useUser";
+
+
+
 export default function MoreInfo() {
     const {mail, password} =useUser();
     if (

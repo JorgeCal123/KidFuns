@@ -1,8 +1,36 @@
-/*
-body {
-	background-image: url('../.././image/fondos/fondo1.jpg');
-}*/
 
+.inicio {
+	background-image: url('../../image/fondos/fondo1.jpg');
+    display: grid;
+	grid-template-columns: 1fr 1fr;
+
+}
+
+@media screen and (max-width: 580px){
+    .inicio{
+        display: grid;
+        grid-template-columns: 1fr;
+        background-size: cover;
+        width: 100%;
+        height: 100%;
+    }
+    .imglogo{
+        padding-left: 15%;
+    }
+}
+.containerimg{
+    width: 80%;
+    margin: 0 auto;
+
+}
+
+.imglogo{
+    padding-left: 15%;
+    width: 90%;
+    min-width: 50%;
+
+}
+/*
 .buttonkid {
     list-style: none;
     position: relative;
@@ -23,3 +51,4 @@ body {
     grid-template-columns: repeat(auto-fill, 110px);
     gap: 40px;   
 }
+*/

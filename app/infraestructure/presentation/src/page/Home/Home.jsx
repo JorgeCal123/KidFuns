@@ -1,25 +1,19 @@
-import { useNavigate } from 'react-router-dom';
 import Logo from "../../image/logos/logo_principal.png"
-import { Boton, Formulario } from '../../elementos/Formularios';
-import { Logica } from './Logicalformulario';
-import './Home.css'
 import { Formulario_user } from './formulario';
-
+import './Home.css'
 
 const Home = () => {
-  const navigate = useNavigate();
   return (
-    <main>
-      <div className="App">
-            <header className="App-header">
-                <img className="logoprincipal" src={Logo} alt="hola" />
-            </header>
+    <body className="inicio">
+      <main className="Logo">
+        <div clasName="containerimg">
+            <img className="imglogo"src={Logo} alt="logoInicio"/>
         </div>
-      <Formulario_user />
-      <Boton onClick={() => navigate('/Register')}>
-        Registrate
-      </Boton>
-    </main>
+      </main>
+      <aside className="formulario">
+        <Formulario_user />
+      </aside>
+    </body>
   );
 }
 

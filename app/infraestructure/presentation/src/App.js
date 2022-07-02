@@ -7,7 +7,7 @@ import { Registerkids } from "./page/Registerkids/RegisterKids";
 import { Userkids } from "./page/Userkids/UserKids";
 import { LoginKids } from './page/Loginkids/Loginkids'
 import { Level } from "./page/Level/MainLevel";
-
+import './styles_main.css'
 function App() {
     return (
         <div className="App">
