@@ -25,6 +25,18 @@ const Formulario1 = styled.form`
 
 	@media (max-width: 800px){
 		grid-template-columns: 1fr;
+		width: 70%;
+		heith
+	}
+	@media (max-width: 400px){
+		grid-template-columns: 1fr;
+		width: 30%;
+		height: auto;
+	}
+	@media (max-width: 300px){
+		grid-template-columns: 1fr;
+		width: 10%;
+		height: auto;
 	}
 `;
 
