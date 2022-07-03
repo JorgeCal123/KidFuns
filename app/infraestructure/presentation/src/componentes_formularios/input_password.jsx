@@ -14,7 +14,7 @@ export function Input_password() {
             tipo="password"
             label="Contraseña"
             placeholder="password"
-            name="password1"
+            name="password"
             leyendaError="La contraseña tiene que ser de 4 a 12 dígitos."
             expresionRegular={expresiones.password}
         />

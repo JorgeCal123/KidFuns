@@ -13,14 +13,10 @@ const colores = {
 
 const Formulario = styled.form`
 	display: grid;
-	grid-template-columns: 1fr;
+	grid-template-columns: 2fr;
 	gap: 20px;
-
-	@media (min-width: 800px){
-		grid-template-columns: 1fr;
-
-	}
 `;
+
 const Formulario2 = styled.form`
 	display: grid;
 	grid-template-columns: 1fr 1fr;
@@ -47,6 +43,8 @@ const Label = styled.label`
 const GrupoInput = styled.div`
 	position: relative;
 	z-index: 90;
+	padding-left: 20%;
+
 
 `;
 
@@ -149,7 +147,7 @@ const LeyendaError = styled.p`
 */
 
 const IconoValidacion = styled(FontAwesomeIcon)`
-	width: 70%; 
+	padding-right: 25%;
 	position: absolute;
 	right: 10px;
 	bottom: 14px;
@@ -175,7 +173,7 @@ const IconoValidacion = styled(FontAwesomeIcon)`
  * margin-right = para que el checkbox y el tecto tenga una margen
  */
 const ContenedorTerminos = styled.div`
-	grid-column: span 2;
+	grid-column: span 1;
 
 	input {
 		margin-right: 10px;
@@ -197,7 +195,7 @@ const ContenedorBotonCentrado = styled.div`
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	grid-column: span 2;
+	grid-column: span 1;
 
 	@media (max-width: 800px){
 		grid-column: span 1;

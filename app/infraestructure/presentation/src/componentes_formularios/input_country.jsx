@@ -8,7 +8,6 @@ export function Input_country() {
    // const value = mail['campo'];
 
     return (
-        
         <ComponenteInput
           estado={country}
           cambiarEstado={cambiarCountry}
@@ -18,8 +17,6 @@ export function Input_country() {
           name="country"
           leyendaError="El country tiene que ser de 4 a 16 dígitos y solo puede contener numeros, letras y guion bajo."
           expresionRegular={expresiones.country}
-        />        
-        
+        />  
     );
-
 }

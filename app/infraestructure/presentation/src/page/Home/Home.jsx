@@ -1,19 +1,19 @@
 import Logo from "../../image/logos/logo_principal.png"
-import { Formulario_user } from './formulario';
+import { Formulario_login } from './formulario';
 import './Home.css'
 
 const Home = () => {
   return (
-    <body className="inicio">
+    <div className="inicio">
       <main className="Logo">
-        <div clasName="containerimg">
+        <div className="containerimg">
             <img className="imglogo"src={Logo} alt="logoInicio"/>
         </div>
       </main>
       <aside className="formulario">
-        <Formulario_user />
+        <Formulario_login />
       </aside>
-    </body>
+    </div>
   );
 }
 

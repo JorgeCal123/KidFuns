@@ -10,7 +10,7 @@ import { Level } from "./page/Level/MainLevel";
 import './styles_main.css'
 function App() {
     return (
-        <div className="App">
+        <body className="App">
             <Routes>
                 <Route path="/" element={<Home />} exact />
             </Routes>
@@ -32,7 +32,7 @@ function App() {
             <Routes>
                 <Route path="/levelexcercice" element={<Level />} exact />
             </Routes>
-        </div>
+        </body>
     );
 }
 

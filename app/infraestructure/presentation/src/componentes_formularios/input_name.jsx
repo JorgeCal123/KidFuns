@@ -14,7 +14,7 @@ export function Input_name() {
           tipo="text"
           label="Nombre"
           placeholder="John Doe"
-          name="country"
+          name="name"
           leyendaError="El name solo puede contener letras y espacios."
           expresionRegular={expresiones.name}
         />

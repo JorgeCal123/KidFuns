@@ -1,43 +1,43 @@
 
-.inicio {
-	background-image: url('../../image/fondos/fondo1.jpg');
+.inicio2 {
+	background-image: url('../../image/fondos/fondo2.jpg');  display: flex;
     display: grid;
 	grid-template-columns: 1fr 1fr;
     min-height: 100%;
     height:100vh;
-    
+    padding: 0;
 
 
 }
 
 @media screen and (max-width: 580px){
-    .inicio{
+    .inicio2{
         display: grid;
         grid-template-columns: 1fr;
         background-size: cover;
-        width: 100%;
-        height: 100%;
+        height:100vh;
+
+
     }
 }
-.containerimg{
+.containerimg2{
     display: flex;
     align-items: center;
     width: 90%;
     margin: 0 auto;
     min-width: 300px;
-    padding-left: 15%;
+    padding-left: 0%;
 
 
 }
 
-.imglogo{
+.imglogo2{
     width: 100%;
 
 }
 
-.formulario {
-    display: flex;
-    align-items: center;
+.formulario2 {
     min-width: 400px;
+    padding: 0;
 
 }

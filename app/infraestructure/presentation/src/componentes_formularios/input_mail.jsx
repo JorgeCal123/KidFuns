@@ -14,7 +14,7 @@ export function Input_mail() {
           tipo="email"
           label="Correo Electrónico"
           placeholder="john@correo.com"
-          name="correo"
+          name="email"
           leyendaError="El correo solo puede contener letras, numeros, puntos, guiones y guion bajo."
           expresionRegular={expresiones.mails}
         />
