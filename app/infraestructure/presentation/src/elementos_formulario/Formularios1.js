@@ -12,9 +12,29 @@ const Formulario = styled.form`
 	grid-template-columns: 1fr 1fr;
 	gap: 30px;
 	align-items: flex-end;
-
 	@media (max-width: 800px){
 		grid-template-columns: 1fr;
+	}
+`;
+
+const Formulario1 = styled.form`
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	gap: 20px;
+	@media (max-width: 800px){
+		grid-template-columns: 1fr;
+		width: 70%;
+		heith
+	}
+	@media (max-width: 400px){
+		grid-template-columns: 1fr;
+		width: 30%;
+		height: auto;
+	}
+	@media (max-width: 300px){
+		grid-template-columns: 1fr;
+		width: 10%;
+		height: auto;
 	}
 `;
 
@@ -24,7 +44,6 @@ const Label = styled.label`
 	padding: 10px;
 	min-height: 40px;
 	cursor: pointer;
-
 	${props => props.valido === 'false' && css`
 		color: ${colores.error};
 	`}
@@ -44,17 +63,14 @@ const Input = styled.input`
 	padding: 0 40px 0 10px;
 	transition: .3s ease all;
 	border: 3px solid transparent;
-
 	&:focus {
 		border: 3px solid ${colores.borde};
 		outline: none;
 		box-shadow: 3px 0px 30px rgba(163,163,163, 0.4);
 	}
-
 	${props => props.valido === 'true' && css`
 		border: 3px solid transparent;
 	`}
-
 	${props => props.valido === 'false' && css`
 		border: 3px solid ${colores.error} !important;
 	`}
@@ -65,11 +81,9 @@ const LeyendaError = styled.p`
 	margin-bottom: 0;
 	color: ${colores.error};
 	display: none;
-
 	${props => props.valido === 'true' && css`
 		display: none;
 	`}
-
 	${props => props.valido === 'false' && css`
 		display: block;
 	`}
@@ -82,12 +96,10 @@ const IconoValidacion = styled(FontAwesomeIcon)`
 	z-index: 100;
 	font-size: 16px;
 	opacity: 0;
-
 	${props => props.valido === 'false' && css`
 		opacity: 1;
 		color: ${colores.error};
 	`}
-
 	${props => props.valido === 'true' && css`
 		opacity: 1;
 		color: ${colores.exito};
@@ -96,11 +108,9 @@ const IconoValidacion = styled(FontAwesomeIcon)`
 
 const ContenedorTerminos = styled.div`
 	grid-column: span 2;
-
 	input {
 		margin-right: 10px;
 	}
-
 	@media (max-width: 800px){
 		grid-column: span 1;
 	}
@@ -111,7 +121,6 @@ const BotonCentrado = styled.div`
 	flex-direction: column;
 	align-items: center;
 	grid-column: span 1;
-
 	@media (max-width: 800px){
 		grid-column: span 1;
 	}
@@ -129,7 +138,6 @@ const Boton = styled.button`
 	cursor: pointer;
 	transition: .1s ease all;
 	margin: 10px;
-
 	&:hover {
 		box-shadow: 3px 0px 30px rgba(163,163,163, 1);
 	}
@@ -165,6 +173,7 @@ const MensajeError = styled.div`
 
 export {
 	Formulario,
+	Formulario1,
 	Label,
 	GrupoInput,
 	Input,

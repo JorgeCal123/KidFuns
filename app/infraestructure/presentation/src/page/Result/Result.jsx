@@ -2,8 +2,8 @@ import React from "react";
 import logo from '../../image/logos/logo7-4.PNG'
 import { Datatable } from "./DataTable";
 import { SelectMenu2 } from "./SelectMenu";
-import { Formulario1 } from '../../elementos/Formularios1'
-import { Boton, Formulario } from '../../elementos/Formularios'
+import { Formulario1 } from '../../elementos_formulario/Formularios1'
+import { Boton, Formulario } from '../../elementos_formulario/Formularios'
 
 const Result = () => {
     const ListNivel = [{Item: 'Nivel 1' },

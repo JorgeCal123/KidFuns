@@ -14,6 +14,8 @@ export function get_info() {
 }
 
 export function Validation_data() {
+    let valor = false;
+    let valor2 = true;
 
     Axios.get("http://127.0.0.1:8000/user/")
       .then((respuesta) => {

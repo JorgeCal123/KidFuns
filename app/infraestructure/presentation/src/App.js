@@ -4,9 +4,11 @@ import { Home } from "./page/Home/Home";
 import { LevelKids } from "./page/Levelkids/LevelKids";
 import { Register } from './page/Register/Register'
 import { Registerkids } from "./page/Registerkids/RegisterKids";
-import { Userkids } from "./page/Userkids/UserKids";
 import { LoginKids } from './page/Loginkids/Loginkids'
 import { Level } from "./page/Level/MainLevel";
+import { Result } from "./page/Result/Result";
+import { Table } from './page/tablas/tablaexersice'
+
 import './styles_main.css'
 function App() {
     return (
@@ -21,9 +23,6 @@ function App() {
                 <Route path="/registerkids" element={<Registerkids />} exact />
             </Routes>
             <Routes>
-                <Route path="/userkids" element={<Userkids />} exact />
-            </Routes>
-            <Routes>
                 <Route path="/levelkids" element={<LevelKids />} exact />
             </Routes>
             <Routes>
@@ -31,6 +30,12 @@ function App() {
             </Routes>
             <Routes>
                 <Route path="/levelexcercice" element={<Level />} exact />
+            </Routes>
+            <Routes>
+                <Route path="/result" element={<Result />} exact />
+            </Routes>
+            <Routes>
+                <Route path="/tabla" element={<Table />} exact />
             </Routes>
         </body>
     );

@@ -7,6 +7,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faExclamationTriangle } from '@fortawesome/free-solid-svg-icons';
 import { get_info, Validation_data } from '../../componentes_formularios/data_formulario1';
 
+import Axios from 'axios';
 
 
 
@@ -17,8 +18,18 @@ export function Formulario_login() {
     const [formularioValido, cambiarFormularioValido] = useState(null);
     const onSubmit = (e) => {
         e.preventDefault();
-        console.log(Validation_data());
-        
+    const info = get_info();
+    Axios.get("http://127.0.0.1:8000/user/")
+    .then((respuesta) => {
+        respuesta.data.map( (item) => {
+          
+          if ((item.email === info.email) && (item.password === info.password)){
+              console.log(item.email +" === " + info.email +" &&" + item.password +" === " + info.password);
+              history('/loginkids');
+
+          }
+        })
+    })
     }
     const Register = () =>{
 

@@ -4,7 +4,7 @@ import './Home.css'
 
 const Home = () => {
   return (
-    <div className="inicio">
+    <body className="inicio">
       <main className="Logo">
         <div className="containerimg">
             <img className="imglogo"src={Logo} alt="logoInicio"/>
@@ -13,7 +13,7 @@ const Home = () => {
       <aside className="formulario">
         <Formulario_login />
       </aside>
-    </div>
+    </body>
   );
 }
 

@@ -1,4 +1,4 @@
-import { BotonCentrado } from '../../elementos/Formularios1'
+import { BotonCentrado } from '../../elementos_formulario/Formularios1'
 import logo from '../../image/logos/logo7-4.PNG'
 import speaker1 from '../../image/logos/speaker2.png'
 import conejo1 from '../../image/animales/conejo5.png'
