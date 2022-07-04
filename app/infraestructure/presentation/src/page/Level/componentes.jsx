@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState, useRef } from 'react';
 import { useNavigate } from "react-router-dom";
 import '../../estilos_viejos.css'
 
@@ -94,23 +94,17 @@ function handleClick(e, LetterRandom){
 }
 
 function Component3({ logo, lettera, marco, conejo2, BotonCentrado, CanvasDraw}) {
-    // Convert canvas to image
-document.getElementById('btn-download').addEventListener("click", function(e) {
-    var canvas = document.querySelector('#my-canvas');
+    const canvasRef = useRef(null);
+        const download = async () => {
+        const image = canvasRef.current.toDataURL('image/png');
+        const blob = await (await fetch(image)).blob();
+        const blobURL = URL.createObjectURL(blob);
+        const link = document.createElement('a');
+        link.href = blobURL;
+        link.download = "image.png";
+        link.click();
+    }
 
-    var dataURL = canvas.toDataURL("image/jpeg", 1.0);
-
-    downloadImage(dataURL, 'my-canvas.jpeg');
-});
-
-// Save | Download image
-function downloadImage(data, filename = 'untitled.jpeg') {
-    var a = document.createElement('a');
-    a.href = data;
-    a.download = filename;
-    document.body.appendChild(a);
-    a.click();
-}
     return (
         <main className='level1'>
                 <div>
@@ -123,10 +117,12 @@ function downloadImage(data, filename = 'untitled.jpeg') {
                         <img src={ lettera} alt='Kidfuns' className='logoa'/>
                         <p>Dibuja</p>
                         <div>
-                            <CanvasDraw brushRadius={3} brushColor={'red'} imgSrc={ marco }/>
+                            <CanvasDraw brushRadius={3} brushColor={'red'} imgSrc={ marco } id="canvas" ref={canvasRef}/>
                         </div>
                         <div>
-                            <button onclick={ downloadImage() }>Save as Image</button>
+                            
+                            {/*<button type="button" >Save as Image</button>*/}
+                            <button type="button" onClick={download} className='glow-on-hover' >h</button>
                         </div>
                     </BotonCentrado>
                 </BotonCentrado>
