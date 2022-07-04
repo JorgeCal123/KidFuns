@@ -80,7 +80,7 @@ function handleClick(e, LetterRandom){
                 <BotonCentrado>
                     <BotonCentrado>
                         <img src={ speaker1 } alt='Kidfuns'/>
-                        <p>Selecciona la correcta</p>
+                        <p >Selecciona la correcta</p>
                         <button type="button" onClick={() => {handleClick( a, LetterRandom )}} className='glow-on-hover' >{ a }</button>
                         <button type="button" onClick={() => {handleClick( b, LetterRandom )}} className='glow-on-hover' >{ b }</button>
                         <button type="button" onClick={() => {handleClick( c, LetterRandom )}} className='glow-on-hover' >{ c }</button>
@@ -181,16 +181,16 @@ function handleClick(e, NumberRandom){
                     <header>
                         <img src={ logo } alt='Kidfuns' className='logoprincipal'/>
                         <br></br>
-                        <h1>{ NumberRandom }</h1>
+                        <p class="text_shadows">{ NumberRandom }</p>
                     </header>
                 </div>
                 <BotonCentrado>
                     <BotonCentrado>
                         <img src={ speaker1 } alt='Kidfuns'/>
                         <p>Selecciona la correcta</p>
-                        <button type="button" onClick={() => {handleClick( a, NumberRandom )}}>{ a }</button>
-                        <button type="button" onClick={() => {handleClick( b, NumberRandom )}}>{ b }</button>
-                        <button type="button" onClick={() => {handleClick( c, NumberRandom )}}>{ c }</button>
+                        <button type="button" onClick={() => {handleClick( a, NumberRandom )}} className='glow-on-hover'>{ a }</button>
+                        <button type="button" onClick={() => {handleClick( b, NumberRandom )}} className='glow-on-hover'>{ b }</button>
+                        <button type="button" onClick={() => {handleClick( c, NumberRandom )}} className='glow-on-hover'>{ c }</button>
                     </BotonCentrado>
                 </BotonCentrado>
                 <div>
