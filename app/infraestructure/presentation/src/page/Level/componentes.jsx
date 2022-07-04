@@ -94,6 +94,23 @@ function handleClick(e, LetterRandom){
 }
 
 function Component3({ logo, lettera, marco, conejo2, BotonCentrado, CanvasDraw}) {
+    // Convert canvas to image
+document.getElementById('btn-download').addEventListener("click", function(e) {
+    var canvas = document.querySelector('#my-canvas');
+
+    var dataURL = canvas.toDataURL("image/jpeg", 1.0);
+
+    downloadImage(dataURL, 'my-canvas.jpeg');
+});
+
+// Save | Download image
+function downloadImage(data, filename = 'untitled.jpeg') {
+    var a = document.createElement('a');
+    a.href = data;
+    a.download = filename;
+    document.body.appendChild(a);
+    a.click();
+}
     return (
         <main className='level1'>
                 <div>
@@ -107,6 +124,9 @@ function Component3({ logo, lettera, marco, conejo2, BotonCentrado, CanvasDraw})
                         <p>Dibuja</p>
                         <div>
                             <CanvasDraw brushRadius={3} brushColor={'red'} imgSrc={ marco }/>
+                        </div>
+                        <div>
+                            <button onclick={ downloadImage() }>Save as Image</button>
                         </div>
                     </BotonCentrado>
                 </BotonCentrado>

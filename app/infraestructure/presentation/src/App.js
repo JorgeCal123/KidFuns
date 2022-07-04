@@ -8,35 +8,24 @@ import { LoginKids } from './page/Loginkids/Loginkids'
 import { Level } from "./page/Level/MainLevel";
 import { Result } from "./page/Result/Result";
 import { Table } from './page/tablas/tablaexersice'
+import { Page404 } from "./page/Page404/Page404";
 
 import './styles_main.css'
 function App() {
     return (
         <body className="App">
-            <Routes>
-                <Route path="/" element={<Home />} exact />
+                <Routes>
+                    <Route path="/" element={<Home />} exact />
+                    <Route path="/register" element={<Register />} exact />
+                    <Route path="/registerkids" element={<Registerkids />} exact />
+                    <Route path="/levelkids" element={<LevelKids />} exact />
+                    <Route path="/loginkids" element={<LoginKids />} exact />
+                    <Route path="/levelexcercice" element={<Level />} exact />
+                    <Route path="/result" element={<Result />} exact />
+                    <Route path="/tabla" element={<Table />} exact />
+                    <Route path="*" element={<Page404 />}/>
             </Routes>
-            <Routes>
-                <Route path="/register" element={<Register />} exact />
-            </Routes>
-            <Routes>
-                <Route path="/registerkids" element={<Registerkids />} exact />
-            </Routes>
-            <Routes>
-                <Route path="/levelkids" element={<LevelKids />} exact />
-            </Routes>
-            <Routes>
-                <Route path="/loginkids" element={<LoginKids />} exact />
-            </Routes>
-            <Routes>
-                <Route path="/levelexcercice" element={<Level />} exact />
-            </Routes>
-            <Routes>
-                <Route path="/result" element={<Result />} exact />
-            </Routes>
-            <Routes>
-                <Route path="/tabla" element={<Table />} exact />
-            </Routes>
+            
         </body>
     );
 }
