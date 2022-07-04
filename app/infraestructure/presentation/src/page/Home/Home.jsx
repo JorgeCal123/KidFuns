@@ -4,8 +4,8 @@ import './Home.css'
 
 const Home = () => {
   return (
-    <body className="inicio">
-      <main className="Logo">
+    <div className="inicio">
+      <main className="mainLogo">
         <div className="containerimg">
             <img className="imglogo"src={Logo} alt="logoInicio"/>
         </div>
@@ -13,7 +13,7 @@ const Home = () => {
       <aside className="formulario">
         <Formulario_login />
       </aside>
-    </body>
+    </div>
   );
 }
 

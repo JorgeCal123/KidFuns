@@ -5,16 +5,16 @@ import './Register.css'
 
 const Register = () => {
     return (
-        <body className="inicio2">
-            <div className="Logo2">
+        <div className="inicio2">
+            <main className="Logo2">
                 <div className="containerimg2">
                      <img className="logoprincipal2" src={logo1} alt="hola" />
                 </div>
-            </div>
-            <div  className="formulario2">
+            </main>
+            <aside  className="formulario2">
                 <Formulario_user />
-            </div>
-        </body>
+            </aside>
+        </div>
     );
 }
 export { Register };

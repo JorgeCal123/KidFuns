@@ -1,18 +1,21 @@
 
-.inicio2 {
+.inicio4 {
 	background-image: url('../../image/fondos/fondo1.jpg');  display: flex;
     background-repeat: no-repeat;
     background-size: 100% 100%;
 
+
+
+}
+.main_logo_formulario{
     display: grid;
 	grid-template-columns: 1fr 1fr;
     min-height: 100%;
     height:100vh;
     padding: 0;
     overflow: auto auto;
-
-
 }
+/*
 
 @media screen and (max-width: 580px){
     .inicio2{
@@ -45,3 +48,5 @@
     padding: 0;
 
 }
+
+*/

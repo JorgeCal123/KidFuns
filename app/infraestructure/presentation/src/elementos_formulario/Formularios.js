@@ -34,7 +34,6 @@ const Label = styled.label`
 	min-height: 40px;
 	cursor: pointer;
 	left: 20%;
-
 	${props => props.valido === 'false' && css`
 		color: ${colores.error};
 	`}

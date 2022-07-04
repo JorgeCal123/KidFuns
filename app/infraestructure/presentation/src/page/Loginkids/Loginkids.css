@@ -3,6 +3,18 @@ body {
 	background-image: url('../.././image/fondos/fondo3.jpg');
 }*/
 
+.inicio3 {
+	background-image: url('../../image/fondos/fondo8.jpg');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+
+    display: grid;
+	grid-template-columns: 1fr;
+    height:100vh;
+    overflow: auto auto;
+
+}
+
 .buttonkid {
     list-style: none;
     position: relative;

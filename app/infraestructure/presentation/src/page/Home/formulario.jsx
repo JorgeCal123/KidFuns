@@ -27,6 +27,7 @@ export function Formulario_login() {
               console.log(item.email +" === " + info.email +" &&" + item.password +" === " + info.password);
               history('/loginkids');
 
+
           }
         })
     })

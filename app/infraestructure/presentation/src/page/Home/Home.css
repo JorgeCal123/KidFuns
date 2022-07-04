@@ -1,33 +1,25 @@
 
 .inicio {
 	background-image: url('../../image/fondos/fondo1.jpg');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
     display: grid;
 	grid-template-columns: 1fr 1fr;
-    min-height: 100%;
     height:100vh;
-    
-
+    overflow: auto auto;
 
 }
 
-@media screen and (max-width: 580px){
-    .inicio{
-        display: grid;
-        grid-template-columns: 1fr;
-        background-size: cover;
-        width: 100%;
-        height: 100%;
-    }
+.mainLogo{
+    padding: 20px;
+
 }
+
 .containerimg{
-    display: flex;
-    align-items: center;
     width: 90%;
-    margin: 0 auto;
-    min-width: 300px;
-    padding-left: 15%;
-
-
+    margin: 0;
+    min-width: 500px;
+    
 }
 
 .imglogo{
@@ -36,8 +28,15 @@
 }
 
 .formulario {
-    display: flex;
-    align-items: center;
-    min-width: 400px;
-
+    width: 90%;
+    min-width: 500px;
+    margin: auto; 
 }
+
+
+
+
+
+
+
+

@@ -140,7 +140,7 @@ const Formulario_user = () => {
           </p>
         </MensajeError>}
         <ContenedorBotonCentrado>
-          <Boton type="submit" onClick>Enviar</Boton>
+          <Boton type="submit">Enviar</Boton>
           {formularioValido === true && <MensajeExito>Formulario enviado exitosamente!</MensajeExito>}
         </ContenedorBotonCentrado>
       </Formulario2>

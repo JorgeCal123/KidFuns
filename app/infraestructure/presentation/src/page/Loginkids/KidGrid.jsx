@@ -24,7 +24,7 @@ export function KidGrid(props) {
   const [list, setList] = useState([]);
   useEffect(() => {
     Axios({
-      url: "http://44.204.57.239:8000/kid/",
+      url: "http://127.0.0.1:8000/kid/",
     })
       .then((response) => {
         setList(response.data);
