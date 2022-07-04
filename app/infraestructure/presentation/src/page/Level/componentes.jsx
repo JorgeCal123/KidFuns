@@ -81,9 +81,9 @@ function handleClick(e, LetterRandom){
                     <BotonCentrado>
                         <img src={ speaker1 } alt='Kidfuns'/>
                         <p>Selecciona la correcta</p>
-                        <button type="button" onClick={() => {handleClick( a, LetterRandom )}} className='glow-on-hover' style={{ color: 'blue' }}>{ a }</button>
-                        <button type="button" onClick={() => {handleClick( b, LetterRandom )}} className='glow-on-hover' style={{ color: 'blue' }}>{ b }</button>
-                        <button type="button" onClick={() => {handleClick( c, LetterRandom )}} className='glow-on-hover' style={{ color: 'blue' }}>{ c }</button>
+                        <button type="button" onClick={() => {handleClick( a, LetterRandom )}} className='glow-on-hover' >{ a }</button>
+                        <button type="button" onClick={() => {handleClick( b, LetterRandom )}} className='glow-on-hover' >{ b }</button>
+                        <button type="button" onClick={() => {handleClick( c, LetterRandom )}} className='glow-on-hover' >{ c }</button>
                     </BotonCentrado>
                 </BotonCentrado>
                 <div>
