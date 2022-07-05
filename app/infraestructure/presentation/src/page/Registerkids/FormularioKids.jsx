@@ -5,6 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faExclamationTriangle } from '@fortawesome/free-solid-svg-icons';
 import Input from '../../componentes_formularios/Input';
 import { useLocation, useNavigate } from 'react-router-dom';
+import { Add_Kids, List_Kids } from './List_Kids';
 
 const Formulariokids = (props) => {
   const [name, cambiarName] = useState({ campo: '', valido: null });
@@ -15,7 +16,7 @@ const Formulariokids = (props) => {
   const navigate = useNavigate();
   const [id_user, setId_user] = useState(location.state.id_user);
   const expresiones = {
-    name: /^[a-zA-ZÀ-ÿ\s]{2,40}$/, // Letras y espacios, pueden llevar acentos.
+    name: /^[a-zA-ZÀ-ÿ\s]{2,40}$/, // Letras y es
     age: /^[0-9]{1,2}$/,
     avatar: /^[a-zA-ZÀ-ÿ\s]{2,40}$/
 
@@ -46,30 +47,19 @@ const Formulariokids = (props) => {
       cambiarName({ campo: '', valido: null });
       cambiarAge({ campo: '', valido: null });
       cambiarAvatar({ campo: '', valido: null });
-
-      // envio de datos
-      const requestOptions = {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          name: name['campo'],
-          age: age['campo'],
-          avatar: avatar['campo'],
-          user: id_user
-        })
-      };
-      console.log(requestOptions);
-      fetch('http://127.0.0.1:8000/kid/', requestOptions)
-        .then(response => response.json())
-        .then(data => console.log('respuesta', data));
-
-    } else {
+      const new_kid = {n:name['campo'], a:age['campo'], v:avatar['campo'], i:id_user}
+      Add_Kids(new_kid);
+    
+    } 
+    else {
       cambiarFormularioValido(false);
     }
+    <List_Kids />
+
   }
 
   return (
-    <div>
+    <div className="form_list">
       <Formulario action="" onSubmit={onSubmit}>
         <Input
           estado={name}
@@ -112,6 +102,9 @@ const Formulariokids = (props) => {
           {formularioValido === true && <MensajeExito>Formulario enviado exitosamente!</MensajeExito>}
         </ContenedorBotonCentrado>
       </Formulario>
+      <div  className="formulario2">
+         <List_Kids></List_Kids>
+      </div>
     </div>
   );
 }

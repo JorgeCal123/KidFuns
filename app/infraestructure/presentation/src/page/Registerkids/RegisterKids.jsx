@@ -123,3 +123,4 @@ const Registerkids = (props) => {
 }
 
 export { Registerkids };
+//                     <Boton type="submit" onClick={() => navigate('/loginkids')} >Registrar</Boton>

@@ -34,6 +34,8 @@ body {
 header {
 	width: 100%; 
 	margin: auto;
+	align-items: center;
+
 }
 
 aside {

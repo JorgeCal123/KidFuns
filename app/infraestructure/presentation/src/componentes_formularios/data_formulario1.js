@@ -24,7 +24,6 @@ export function Validation_data() {
             if ((item.email === info.email) && (item.password === info.password)){
                 console.log(item.email +" === " + info.email +" &&" + item.password +" === " + info.password);
                 console.log("entra");
-                valor = true;
                 return(valor)
             }
               /*if ((item.email === info.email) && (item.password === info.password)){

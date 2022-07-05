@@ -3,17 +3,48 @@
 	background-image: url('../../image/fondos/fondo1.jpg');  display: flex;
     background-repeat: no-repeat;
     background-size: 100% 100%;
-
+    height:100vh;
+    overflow: auto auto;
 
 
 }
 .main_logo_formulario{
     display: grid;
-	grid-template-columns: 1fr 1fr;
+	grid-template-columns: 200px 1fr;
     min-height: 100%;
-    height:100vh;
+    width:100%;
+    height: 100%;
+    margin: 0;
     padding: 0;
-    overflow: auto auto;
+    
+}
+
+.form_list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.containerimg3{
+    width: 50%;
+    margin: 0 auto;
+    min-width: 300px;
+    padding-left: 0%;
+}
+
+
+.imglogo3{
+    width: 100%;
+
+}
+.title{
+    display: flex;
+    justify-content: center;
+}
+
+
+.boton_registrar{
+    position: fixed;
+    bottom: 0;
 }
 /*
 
