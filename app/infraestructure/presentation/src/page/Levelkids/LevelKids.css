@@ -1,0 +1,8 @@
+.mainLevel{
+
+	background-image: url('../../image/fondos/fondo3.jpg');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    overflow: hidden scroll;
+    height: 100vh;
+}

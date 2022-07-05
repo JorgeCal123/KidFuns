@@ -9,6 +9,10 @@ import { Level } from "./page/Level/MainLevel";
 import { Result } from "./page/Result/Result";
 import { Table } from './page/tablas/tablaexersice'
 
+
+
+
+
 import './styles_main.css'
 function App() {
     return (
@@ -23,10 +27,10 @@ function App() {
                 <Route path="/registerkids" element={<Registerkids />} exact />
             </Routes>
             <Routes>
-                <Route path="/levelkids" element={<LevelKids />} exact />
+                <Route path="/loginkids" element={<LoginKids />} exact />
             </Routes>
             <Routes>
-                <Route path="/loginkids" element={<LoginKids />} exact />
+                <Route path="/levelkids" element={<LevelKids />} exact />
             </Routes>
             <Routes>
                 <Route path="/levelexcercice" element={<Level />} exact />

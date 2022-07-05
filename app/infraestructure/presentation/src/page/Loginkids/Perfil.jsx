@@ -1,5 +1,5 @@
 import { KidGrid } from "./KidGrid"
-export function Buttonkids() {
+export function Perfil() {
     return (
         <div>
             <KidGrid />

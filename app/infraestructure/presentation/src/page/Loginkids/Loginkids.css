@@ -3,7 +3,7 @@ body {
 	background-image: url('../.././image/fondos/fondo3.jpg');
 }*/
 
-.inicio3 {
+.inicio5 {
 	background-image: url('../../image/fondos/fondo8.jpg');
     background-repeat: no-repeat;
     background-size: 100% 100%;
@@ -15,12 +15,36 @@ body {
 
 }
 
-.buttonkid {
+.App {
+    overflow: hidden hidden;
+
+}
+
+.headerlogo5{
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.imglogo5{
+    display: flex;
+
+    width: 45%;
+    padding: auto;
+    margin: auto;
+
+}
+
+.containerbutton {
     list-style: none;
     position: relative;
     width: 150px;
     height: 150px;
     border-radius: 100%;
+
 }
 
 .imgbutton {
@@ -28,10 +52,10 @@ body {
     width: auto;
     max-height: 100px;
     max-width: 100px;
+
 }
 
 .gridkid {
     display: grid;
     grid-template-columns: repeat(auto-fill, 110px);
-    gap: 40px;   
 }

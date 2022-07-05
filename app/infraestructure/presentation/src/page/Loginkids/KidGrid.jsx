@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react'
-import { KidCard } from "./KidCard"
 import Axios from 'axios';
+import { useNavigate } from 'react-router-dom';
+
 //import styles from'./Loginkids.css'
 
 
@@ -14,12 +15,16 @@ const image = require("../../image/avatar/1.png");
         <div>
             <img src ={require("../../image/avatar/1.png")} alt="hola" />
             {/*<img src ={require("../.." + props.ruta)} alt="" />*/}
-
         </div>
 );
 }
 
 export function KidGrid(props) {
+
+  let history = useNavigate();
+  const onsubmit = (e) => {
+    history('/levelkids', { state: { id_user: "" } });
+  }
 
   const [list, setList] = useState([]);
   useEffect(() => {
@@ -38,7 +43,7 @@ export function KidGrid(props) {
     <div className="App">
       <ul>
         {list.map((item) => (
-          <button key={item.id}>
+          <button className='containerbutton' key={item.id} type="submit" onClick={onsubmit}>
            {item.name}
             <GetImage ruta={item.avatar} />
           </button>

@@ -7,10 +7,11 @@ import { Register_all_kids } from './List_Kids';
 
 
 const Registerkids = () => {
-    const navigate = useNavigate();
+    let history = useNavigate();
 
     const onsubmit = (e) => {
         Register_all_kids();
+        history('/loginkids', { state: { id_user: "" } });
     }
 
     return (

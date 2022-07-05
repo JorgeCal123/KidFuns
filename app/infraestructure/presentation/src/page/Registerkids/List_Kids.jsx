@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { Route } from "react-router-dom";
 
 import Logo from "../../image/logos/logo_principal.png"
 
@@ -36,7 +37,6 @@ export function List_Kids () {
 
 
 export function Register_all_kids() {
-    let history = useNavigate();
 
     info.map( (item, index) => {
             const requestOptions = {
@@ -58,6 +58,5 @@ export function Register_all_kids() {
             
 
     })
-    history('/loginkids', { state: { id_user: info[0].i } });
     
 }
