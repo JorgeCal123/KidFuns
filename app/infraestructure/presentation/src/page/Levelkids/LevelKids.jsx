@@ -7,7 +7,7 @@ const LevelKids = () => {
  
   return (
     <div className='mainLevel'>
-      <div>
+      <div className='logolevel'>
         <img src={ imagen } alt='' className='logoprincipal'/>
       </div>
       <div>

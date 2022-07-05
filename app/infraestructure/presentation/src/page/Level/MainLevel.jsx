@@ -3,10 +3,10 @@ import { SelectLevel } from "./selectlevel";
 
 
 const Level = () => {
-    const level = 'l3'
-    const materia = 'm2'
+    const level = 'l1'
+    const materia = 'm1'
       return (
-    <div> 
+    <div className="mainLevels"> 
          <SelectLevel level={level} materia={materia}/>
      </div>
    );
