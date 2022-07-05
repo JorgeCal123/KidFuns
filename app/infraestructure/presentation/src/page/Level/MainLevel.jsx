@@ -3,7 +3,7 @@ import { SelectLevel } from "./selectlevel";
 
 
 const Level = () => {
-    const level = 'l2'
+    const level = 'l1'
     const materia = 'm1'
       return (
     <div> 

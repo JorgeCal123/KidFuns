@@ -12,6 +12,7 @@ import { Page404 } from "./page/Page404/Page404";
 import { AddCanvas } from "./page/Level/Addcanvas";
 
 import './styles_main.css'
+import { Reconovoz } from "./page/Vozreconi/Reconovoz";
 
 function App() {
     return (
@@ -25,7 +26,7 @@ function App() {
                 <Route path="/levelexcercice" element={<Level />} exact />
                 <Route path="/result" element={<Result />} exact />
                 <Route path="/tabla" element={<Table />} exact />
-                <Route path="/canvas" element={ <AddCanvas /> } exact />
+                <Route path="/voz" element={ <Reconovoz /> } exact />
                 <Route path="*" element={<Page404 />}/>
             </Routes>
         </body>

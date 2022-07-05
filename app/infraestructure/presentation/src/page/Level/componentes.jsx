@@ -1,6 +1,7 @@
 import React, { useState, useRef } from 'react';
 import { useNavigate } from "react-router-dom";
 import '../../estilos_viejos.css'
+import { Reconovoz } from '../Vozreconi/Reconovoz';
 
 function generateRandomLetter() {
     const alphabet = "abcdefghijklmnopqrstuvwxyz"
@@ -29,6 +30,7 @@ function Component1 ({logo, letter, speaker, Formulario, micro, conejo }) {
                         <p class="text_shadows">Repite</p>
                     </div>
                     <Formulario>
+                        <Reconovoz />
                             <img src={ letter } alt='Kidfuns' className='lettera'/>
                             <div>
                                  <img src={ speaker } alt='Kidfuns' className='speaker1'/>
