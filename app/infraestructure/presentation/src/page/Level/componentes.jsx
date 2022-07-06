@@ -19,7 +19,7 @@ function generateRandomIndex() {
 
 function Component1 ({logo, letter, speaker, Formulario, micro, conejo }) {
     return (
-        <main className='level1'>
+        <div className="levels"> 
                 <div className='conteinerlogolvs'>
                     <header className="App-header">
                         <img src={ logo } alt='Kidfuns' className='logoprincipallvs'/>
@@ -27,30 +27,25 @@ function Component1 ({logo, letter, speaker, Formulario, micro, conejo }) {
                 </div>
                 <div className='enunciado'>
                     <div className="content">
-                        <p className="text_shadows">Repite</p>
+                        <p className="text_shadows">¿Qué letra es?</p>
                     </div>
-                    <Reconovoz />
 
-                    <div>
+                    <div className='label_letter'>
                             <img src={ letter } alt='Kidfuns' className='lettera'/>
-                            <div>
-                                 <img src={ speaker } alt='Kidfuns' className='speaker1'/>
-                            </div>
-                           
                     </div>
                     <div className='enunciado2' >
                         <p className="text_shadows">Presiona</p>
                     </div>
-                    <button type='button' className='button5'><img src={ micro } alt='Kidfuns' className='speaker1'/></button>
+                    <Reconovoz micro={micro}/>
                 </div>
-                <div>
+                {/*<div>
                     <img src={ conejo } alt='Kidfuns' className='logoprincipal'/>
-                </div>
-            </main>
+    |           </div>*/}
+        </div>
     );
 }
 
-function Component2({ logo, speaker1, BotonCentrado, conejo1 }){
+function Component2({ logo, micro, conejo1, etiq1, etiq2, etiq3}){
     const a = generateRandomLetter()
     const b = generateRandomLetter()
     const c = generateRandomLetter()
@@ -59,40 +54,65 @@ function Component2({ logo, speaker1, BotonCentrado, conejo1 }){
     const [Correcta, setCorrect] = useState(0)
     const [Fallaste, setFalse] = useState(0)
     const navigate = useNavigate('/levelkids')
-function handleClick(e, LetterRandom){
-    if (LetterRandom ===  e){
-        setCorrect(Correcta + 1);
-        alert(`true, ${ Correcta } ${ e }`);
-    }
-    if (LetterRandom !==  e) {
-        setFalse(Fallaste + 1);
-        alert(`false, ${ Fallaste } ${ e }`);
-    }
-    if (Correcta === 6){
-        navigate('/loginkids')
-    }
+    function handleClick(e, LetterRandom){
+        if (LetterRandom ===  e){
+            setCorrect(Correcta + 1);
+            alert(`true, ${ Correcta } ${ e }`);
         }
+        if (LetterRandom !==  e) {
+            setFalse(Fallaste + 1);
+            alert(`false, ${ Fallaste } ${ e }`);
+        }
+        if (Correcta === 6){
+            navigate('/loginkids')
+        }
+    }
     return(
-        <main className='level1'>
-                <div>
-                    <header>
-                        <img src={ logo } alt='Kidfuns' className='logoprincipal'/>
-                        <p className="text_anime">{ LetterRandom }</p>
-                    </header>
+        <div className='levels'>
+            <div className='conteinerlogolvs'>
+                <header className="App-header">
+                    <img src={ logo } alt='Kidfuns' className='logoprincipallvs'/>
+                </header>
+            </div>
+            <div className='enunciado'>
+                <div className="content">
+                    <p className="text_shadows">¿Qué letra es?</p>
                 </div>
-                <BotonCentrado>
-                    <BotonCentrado>
-                        <img src={ speaker1 } alt='Kidfuns'/>
+                <div className='label_letter'>
+                    <p className="text_anime">{ LetterRandom }</p>
+                </div>
+                <div className='containermicro2'>
+                    <div>
+                        <button className='buttonspeaker1'>
+                            <img src={ micro } alt='Kidfuns' className='sound'/>
+                        </button>
+                    </div>         
+                    <div>
                         <p >Selecciona la correcta</p>
-                        <button type="button" onClick={() => {handleClick( a, LetterRandom )}} className='glow-on-hover' >{ a }</button>
-                        <button type="button" onClick={() => {handleClick( b, LetterRandom )}} className='glow-on-hover' >{ b }</button>
-                        <button type="button" onClick={() => {handleClick( c, LetterRandom )}} className='glow-on-hover' >{ c }</button>
-                    </BotonCentrado>
-                </BotonCentrado>
-                <div>
-                    <img src={ conejo1 } alt='Kidfuns' className='logoprincipal'/>
+                    </div>
+                    <div className='selectanswer'>
+                        <button type="button" onClick={() => {handleClick( a, LetterRandom )}} className='glow-on-hover' >
+                            <div className='song'>{ a }</div>
+                            <div className='song1'><img src={ etiq1 } className='etiq'/></div>
+                            
+                        </button>
+                        <button type="button" onClick={() => {handleClick( b, LetterRandom )}} className='glow-on-hover' >
+                            <div className='song'>{ b }</div>
+                            <div className='song1'><img src={ etiq2 } className='etiq'/></div>
+                            
+                        </button>
+                        <button type="button" onClick={() => {handleClick( c, LetterRandom )}} className='glow-on-hover' >
+                            <div className='song'>{ c }</div>
+                            <div className='song1'><img src={ etiq3 } className='etiq'/></div>
+
+                        </button>
+                    </div>
                 </div>
-            </main>
+            </div>
+            {/*<div>
+                <img src={ conejo1 } alt='Kidfuns' className='logoprincipal'/>
+            </div>*/}
+        </div>
     );
 }
 
@@ -109,30 +129,39 @@ function Component3({ logo, lettera, marco, conejo2, BotonCentrado, CanvasDraw})
     }
 
     return (
-        <main className='level1'>
-                <div>
-                    <header>
-                        <img src={ logo } alt='Kidfuns' className='logoprincipal'/>
-                    </header>
-                </div>
-                <BotonCentrado>
-                    <BotonCentrado>
-                        <img src={ lettera} alt='Kidfuns' className='logoa'/>
-                        <p>Dibuja</p>
-                        <div>
-                            <CanvasDraw brushRadius={3} brushColor={'red'} imgSrc={ marco } id="canvas" ref={canvasRef}/>
-                        </div>
-                        <div>
-                            
-                            {/*<button type="button" >Save as Image</button>*/}
-                            <button type="button" onClick={download} className='glow-on-hover' >h</button>
-                        </div>
-                    </BotonCentrado>
-                </BotonCentrado>
-                <div>
-                    <img src={ conejo2 } alt='Kidfuns' className='logoprincipal'/>
-                </div>
-            </main>
+        <div className='levels'>
+            <div className='conteinerlogolvs'>
+                <header className="App-header">
+                    <img src={ logo } alt='Kidfuns' className='logoprincipallvs'/>
+                </header>
+            </div >
+
+            <div className="content">
+                <p className="text_shadows">Dibuja</p>
+            </div>
+            
+            <div className='label_letter'>                
+                <img src={ lettera } alt='Kidfuns' className='lettera'/>
+            </div>
+            
+            <div className='containercanvas'>
+                <CanvasDraw className='canvas1' brushRadius={3} brushColor={'red'} imgSrc={ marco } id="canvass" ref={canvasRef}/>
+            </div>
+
+            <div>
+                {/*<button type="button" >Save as Image</button>*/}
+                <button type="button" onClick={download} className='glow-on-hover2' >
+                    verificar
+                </button>
+                <button type="button" onClick={download} className='glow-on-hover2' >
+                    borrar
+                </button>
+            </div>
+            
+            {/*<div>
+                <img src={ conejo2 } alt='Kidfuns' className='logoprincipal'/>
+            </div>*/}
+        </div>
 
     );
 }
@@ -200,7 +229,7 @@ function handleClick(e, NumberRandom){
                     <header>
                         <img src={ logo } alt='Kidfuns' className='logoprincipal'/>
                         <br></br>
-                        <p className="text_shadows">{ NumberRandom }</p>
+                        <p class="text_shadows">{ NumberRandom }</p>
                     </header>
                 </div>
                 <BotonCentrado>

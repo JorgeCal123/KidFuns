@@ -4,7 +4,7 @@
 	box-sizing: border-box;
 	font-family: 'Slabo 27px', serif;
 }
-/*
+
 div {
 	border-style: solid;
 	border-color: blue;
@@ -22,7 +22,7 @@ header {
 	border-color: yellow;
 }
 
-*/
+
 body {
 	align-items: center;
 	height: 100%;

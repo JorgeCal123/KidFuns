@@ -8,7 +8,7 @@ mic.continuous = true
 mic.interimResults = true
 mic.lang = 'ES'
 
-function Reconovoz() {
+function Reconovoz({micro}) {
   const [isListening, setIsListening] = useState(false)
   const [note, setNote] = useState(null)
   const [savedNotes, setSavedNotes] = useState([])
@@ -54,16 +54,14 @@ function Reconovoz() {
 
   return (
     <>
-      <h1>Voice Notes</h1>
-      <div className="container">
+      <div className="containermicro">
         <div className="box">
-          <h2>Current Note</h2>
           {isListening ? <span>🎙️</span> : <span>🛑🎙️</span>}
           <button onClick={handleSaveNote} disabled={!note}>
             Save Note
           </button>
-          <button onClick={() => setIsListening(prevState => !prevState)}>
-            Start/Stop
+          <button className='buttonspeaker1' onClick={() => setIsListening(prevState => !prevState)}>
+              <img src={ micro } className='speaker1'/>
           </button>
           <p>{note}</p>
         </div>
