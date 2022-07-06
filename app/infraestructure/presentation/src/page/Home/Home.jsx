@@ -5,14 +5,16 @@ import './Home.css'
 const Home = () => {
   return (
     <div className="inicio">
-      <main className="mainLogo">
-        <div className="containerimg">
-            <img className="imglogo"src={Logo} alt="logoInicio"/>
-        </div>
-      </main>
-      <aside className="formulario">
-        <Formulario_login />
-      </aside>
+      <div className="margenes">
+        <main className="mainLogo">
+          <div className="containerimg">
+              <img className="imglogo"src={Logo} alt="logoInicio"/>
+          </div>
+        </main>
+        <aside className="formulario">
+          <Formulario_login />
+        </aside>
+      </div>
     </div>
   );
 }

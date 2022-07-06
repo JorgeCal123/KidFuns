@@ -174,35 +174,31 @@ function Component3({ logo, lettera, marco, conejo2, Boton, CanvasDraw}) {
 
 function Component4 ({ logo, numero, mano, micro, speaker, Formulario, conejo }) {
     return (
-        <main className='level1'>
-                <div>
+        <div className='levels'>
+                <div className='conteinerlogolvs'>
                     <header className="App-header">
-                        <img src={ logo } alt='Kidfuns' className='logoprincipal'/>
+                        <img src={ logo } alt='Kidfuns' className='logoprincipallvs'/>
                     </header>
                 </div>
-                <div className='level1'>
+                <div className='enunciado'>
                     <div className="content">
-                        <p className="text_shadows">Repite</p>
+                        <p className="text_shadows">¿Qué letra es?</p>
                     </div>
-                    <Formulario>
-                            <img src={ numero } alt='Kidfuns' className='lettera'/>
-                            <div>
-                                 <img src={ speaker } alt='Kidfuns' className='speaker1'/>
-                            </div>
-                            <div>
-                                <img src={ mano } alt='Kidfuns' className='lettera'/>
-                            </div>
-                           
-                    </Formulario>
-                    <div className="content">
+                    <div className='containerbotons'>
+                        <div className='img1'>
+                            <img src={ numero } alt='Kidfuns' className='img1'/>
+                        </div>
+                        <div className='img2'>
+                            <img src={ mano } alt='Kidfuns' className='label_letter'/>
+                        </div>
+                    </div>
+                    <div className='enunciado2' >
                         <p className="text_shadows">Presiona</p>
                     </div>
-                    <button type='button' className='button5'><img src={ micro } alt='Kidfuns' className='speaker1'/></button>
+                    <Reconovoz micro={micro}/>
                 </div>
-                <div>
-                    <img src={ conejo } alt='Kidfuns' className='logoprincipal'/>
-                </div>
-            </main>
+
+            </div>
     );
 }
 

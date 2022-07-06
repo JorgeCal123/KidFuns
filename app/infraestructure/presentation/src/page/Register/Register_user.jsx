@@ -12,6 +12,7 @@ const Register = () => {
                 </div>
             </main>
             <aside  className="formulario2">
+                <h1>Registro</h1>
                 <Formulario_user />
             </aside>
         </div>
