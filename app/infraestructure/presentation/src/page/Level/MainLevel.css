@@ -5,6 +5,7 @@
     display: grid;
     height:100vh;
     overflow: auto auto;
+    position: relative;
 }
 
 .App-header{
@@ -56,6 +57,8 @@
   align-content: center;
   justify-content: center;
   overflow: hidden;
+  position: relative;
+
 
 }
 
@@ -63,6 +66,7 @@
   display: flex;
   align-content: center;
   justify-content: center;
+  width:auto;
 
 }
 .containermicro2 {
@@ -71,6 +75,15 @@
   display: grid;
   grid-template-rows: 1fr auto;
   text-align: center;
+}
+.containerbotons {
+  display: flex;
+  justify-content: center;
+  display: grid;
+  grid-template-columns: 100px 100px;
+  text-align: center;
+
+
 }
 
 .selectanswer {

@@ -116,7 +116,7 @@ function Component2({ logo, micro, conejo1, etiq1, etiq2, etiq3}){
     );
 }
 
-function Component3({ logo, lettera, marco, conejo2, BotonCentrado, CanvasDraw}) {
+function Component3({ logo, lettera, marco, conejo2, Boton, CanvasDraw}) {
     const canvasRef = useRef(null);
         const download = async () => {
         const image = canvasRef.current.toDataURL('image/png');
@@ -143,19 +143,25 @@ function Component3({ logo, lettera, marco, conejo2, BotonCentrado, CanvasDraw})
             <div className='label_letter'>                
                 <img src={ lettera } alt='Kidfuns' className='lettera'/>
             </div>
-            
+            {/*imgSrc={ marco } */}
             <div className='containercanvas'>
-                <CanvasDraw className='canvas1' brushRadius={3} brushColor={'red'} imgSrc={ marco } id="canvass" ref={canvasRef}/>
+                <CanvasDraw 
+                    className='canvas1'
+                    brushRadius={3}
+                    brushColor={'red'}
+                    id="canvass" 
+                    ref={canvasRef}/>
             </div>
 
-            <div>
+            <div className='containerbotons'>
                 {/*<button type="button" >Save as Image</button>*/}
-                <button type="button" onClick={download} className='glow-on-hover2' >
+                
+                <Boton type="button" onClick={download} className='glow-on-hover2' >
                     verificar
-                </button>
-                <button type="button" onClick={download} className='glow-on-hover2' >
+                </Boton>
+                <Boton type="button" onClick={download} className='glow-on-hover2' >
                     borrar
-                </button>
+                </Boton>
             </div>
             
             {/*<div>

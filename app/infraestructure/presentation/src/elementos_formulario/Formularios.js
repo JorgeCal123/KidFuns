@@ -229,7 +229,6 @@ const Boton = styled.button`
 	cursor: pointer;
 	transition: .1s ease all;
 	font-size: 20px;
-
 	&:hover {
 		box-shadow: 3px 0px 30px rgba(163,163,163, 1);
 	}
