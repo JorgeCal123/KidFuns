@@ -74,10 +74,6 @@ function Component2({ logo, micro, conejo1, etiq1, etiq2, etiq3 }){
                     <img src={ logo } alt='Kidfuns' className='logoprincipallvs'/>
                 </header>
             </div>
-
-
-
-
             <div className='enunciado'>
                 <div className="content">
                     <p className="text_shadows">¿Qué letra es?</p>
@@ -282,10 +278,65 @@ function handleClick(e, NumberRandom){
             </div>
     );
 }
+function Component6({ logo, numero, marco, conejo2, Boton, CanvasDraw}) {
+    const canvasRef = useRef(null);
+        const download = async () => {
+        const image = canvasRef.current.toDataURL('image/png');
+        const blob = await (await fetch(image)).blob();
+        const blobURL = URL.createObjectURL(blob);
+        const link = document.createElement('a');
+        link.href = blobURL;
+        link.download = "image.png";
+        link.click();
+    }
 
-function Component6 ({ logo, numero, marco, CanvasDraw, BotonCentrado, conejo2 }) {
     return (
-        <main className='level1'>
+        <div className='levels'>
+            <div className='conteinerlogolvs'>
+                <header className="App-header">
+                    <img src={ logo } alt='Kidfuns' className='logoprincipallvs'/>
+                </header>
+            </div >
+
+            <div className="content">
+                <p className="text_shadows">Dibuja</p>
+            </div>
+            
+            <div className='label_letter'>                
+                <img src={ numero } alt='Kidfuns' className='number'/>
+            </div>
+            {/*imgSrc={ marco } */}
+            <div className='containercanvas'>
+                <CanvasDraw 
+                    className='canvas1'
+                    brushRadius={3}
+                    brushColor={'red'}
+                    id="canvass" 
+                    ref={canvasRef}/>
+            </div>
+
+            <div className='containerbotons'>
+                {/*<button type="button" >Save as Image</button>*/}
+                
+                <Boton type="button" onClick={download} className='glow-on-hover2' >
+                    verificar
+                </Boton>
+                <Boton type="button" onClick={download} className='glow-on-hover2' >
+                    borrar
+                </Boton>
+            </div>
+            
+            {/*<div>
+                <img src={ conejo2 } alt='Kidfuns' className='logoprincipal'/>
+            </div>*/}
+        </div>
+
+    );
+}
+
+function Component7 ({ logo, numero, marco, CanvasDraw, BotonCentrado, conejo2 }) {
+    return (
+        <div className='level1'>
                 <div>
                     <header>
                         <img src={ logo } alt='Kidfuns' className='logoprincipal'/>
@@ -303,7 +354,7 @@ function Component6 ({ logo, numero, marco, CanvasDraw, BotonCentrado, conejo2 }
                 <div>
                     <img src={ conejo2 } alt='Kidfuns' className='logoprincipal'/>
                 </div>
-            </main>
+            </div>
     );
 }
 

@@ -26,8 +26,12 @@
 .lettera {
 	height: 100%;
 	width: 10%;
-    
 }
+
+.number {
+	width: 5%;
+}
+
 .speaker1{
   width: 50%;
 }
