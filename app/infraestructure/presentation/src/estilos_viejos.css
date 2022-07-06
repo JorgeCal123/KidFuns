@@ -1,3 +1,4 @@
+/*
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Mr+Dafoe&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Exo:wght@900&display=swap');
@@ -17,10 +18,10 @@ body {
 }
 
 main {
-	max-width: 800px;/* el contenedor no pase de este tamaño*/
+	max-width: 800px;
 	width: 90%;
-	margin: auto; /* centraa el contenido automaticamente*/
-	padding: 40px; /* */
+	margin: auto; 
+	padding: 40px; 
 }
 
 .level1 {
@@ -151,3 +152,4 @@ main {
   }
 }
 
+*/

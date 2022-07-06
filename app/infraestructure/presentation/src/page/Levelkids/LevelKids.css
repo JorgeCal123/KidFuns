@@ -1,12 +1,104 @@
-.mainLevel{
+.backgroundlvl{
 
 	background-image: url('../../image/fondos/fondo3.jpg');
     background-repeat: no-repeat;
     background-size: 100% 100%;
-    overflow: hidden scroll;
-    height: 100vh;
+    display: grid;
+	grid-template-columns: 1fr;
+    width: 100%;
+
+    height:100vh;
+    overflow: auto auto;
 }
 
-.logolevel {
+.marco {
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    justify-content: center;
+}
+
+.seleclv{
+    position: absolute; left: 25%; top: 25%;
+    border: 10mm ridge rgba(211, 220, 50, .6);
+    background-color: rgb(247, 255, 252);
+}
+
+.asideimgoso{
+    position: absolute; left: 65%; top: 30%;
+}
+
+
+.textuser{
+    margin: auto;
+    padding: auto;
+}
+.logo_seleccion7{
+    height: 10%; 
+
+}
+
+.containerlgpri{
+    justify-content: center;
+    padding-top: 40%;
+    margin-right: 70%;
+    width: 150%;
+}
+
+.lgpri{
+    width: 100%;
+}
+
+.containerprin7{
+    display: flex;
+    justify-content: center;
     
+
+}
+
+.listbotones{
+    display: flex;
+    justify-content: center;
+
+}
+
+.leng {
+    display: grid;
+    grid-template-columns: 20% 50%;
+    align-items: center;
+
+}
+
+.numb {
+    display: grid;
+    grid-template-columns: 20% 50%;
+    align-items: center;
+
+}
+
+.num{
+    width: 40%;
+
+}
+
+.len{
+    width: 20%;
+
+}
+
+.textuser {
+    justify-content: center;
+    position: absolute;
+    top:24%;
+    left: 43%;
+    z-index: 3
+}
+.label1 {
+    text-align: center;
+    -webkit-text-stroke: 2px black;
+    color: aliceblue; 
+}
+p {
+    font-size: 30px;
 }

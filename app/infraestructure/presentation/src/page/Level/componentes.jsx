@@ -26,8 +26,8 @@ function Component1 ({logo, letter, speaker, Formulario, micro, conejo }) {
                     </header>
                 </div>
                 <div className='enunciado'>
-                    <div class="content">
-                        <p class="text_shadows">Repite</p>
+                    <div className="content">
+                        <p className="text_shadows">Repite</p>
                     </div>
                     <Reconovoz />
 
@@ -38,8 +38,8 @@ function Component1 ({logo, letter, speaker, Formulario, micro, conejo }) {
                             </div>
                            
                     </div>
-                    <div className='enunciado2' class="content">
-                        <p class="text_shadows">Presiona</p>
+                    <div className='enunciado2' >
+                        <p className="text_shadows">Presiona</p>
                     </div>
                     <button type='button' className='button5'><img src={ micro } alt='Kidfuns' className='speaker1'/></button>
                 </div>
@@ -146,8 +146,8 @@ function Component4 ({ logo, numero, mano, micro, speaker, Formulario, conejo })
                     </header>
                 </div>
                 <div className='level1'>
-                    <div class="content">
-                        <p class="text_shadows">Repite</p>
+                    <div className="content">
+                        <p className="text_shadows">Repite</p>
                     </div>
                     <Formulario>
                             <img src={ numero } alt='Kidfuns' className='lettera'/>
@@ -159,8 +159,8 @@ function Component4 ({ logo, numero, mano, micro, speaker, Formulario, conejo })
                             </div>
                            
                     </Formulario>
-                    <div class="content">
-                        <p class="text_shadows">Presiona</p>
+                    <div className="content">
+                        <p className="text_shadows">Presiona</p>
                     </div>
                     <button type='button' className='button5'><img src={ micro } alt='Kidfuns' className='speaker1'/></button>
                 </div>
@@ -200,7 +200,7 @@ function handleClick(e, NumberRandom){
                     <header>
                         <img src={ logo } alt='Kidfuns' className='logoprincipal'/>
                         <br></br>
-                        <p class="text_shadows">{ NumberRandom }</p>
+                        <p className="text_shadows">{ NumberRandom }</p>
                     </header>
                 </div>
                 <BotonCentrado>
