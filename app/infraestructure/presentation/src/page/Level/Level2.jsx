@@ -13,7 +13,7 @@ function Level2({ materia }) {
         case 'm1':
             return (<Component2 logo={logo} micro={micro} conejo1={conejo1} etiq1={etiq1} etiq2={etiq2} etiq3={etiq3}/>);
         case 'm2':
-            return (<Component5 logo={logo} micro={micro} conejo1={conejo1}/>);
+            return (<Component5 logo={logo} micro={micro} conejo1={conejo1} etiq1={etiq1} etiq2={etiq2} etiq3={etiq3}/>);
         default:
             return <h2>Invalid Input</h2>
     }

@@ -45,7 +45,7 @@ function Component1 ({logo, letter, speaker, Formulario, micro, conejo }) {
     );
 }
 
-function Component2({ logo, micro, conejo1, etiq1, etiq2, etiq3}){
+function Component2({ logo, micro, conejo1, etiq1, etiq2, etiq3 }){
     const a = generateRandomLetter()
     const b = generateRandomLetter()
     const c = generateRandomLetter()
@@ -74,6 +74,10 @@ function Component2({ logo, micro, conejo1, etiq1, etiq2, etiq3}){
                     <img src={ logo } alt='Kidfuns' className='logoprincipallvs'/>
                 </header>
             </div>
+
+
+
+
             <div className='enunciado'>
                 <div className="content">
                     <p className="text_shadows">¿Qué letra es?</p>
@@ -202,7 +206,7 @@ function Component4 ({ logo, numero, mano, micro, speaker, Formulario, conejo })
     );
 }
 
-function Component5 ({ logo, speaker1, BotonCentrado, conejo1}) {
+function Component5 ({ logo, micro, conejo1, etiq1, etiq2, etiq3}) {
     const a = generateRandomNumber()
     const b = generateRandomNumber()
     const c = generateRandomNumber()
@@ -226,27 +230,56 @@ function handleClick(e, NumberRandom){
         }
     return (
         
-        <main className='level1'>
-                <div>
-                    <header>
-                        <img src={ logo } alt='Kidfuns' className='logoprincipal'/>
+        <div className='levels'>
+                <div className='conteinerlogolvs'>
+                    <header className="App-header">
+                        <img src={ logo } alt='Kidfuns' className='logoprincipallvs'/>
                         <br></br>
-                        <p class="text_shadows">{ NumberRandom }</p>
                     </header>
                 </div>
-                <BotonCentrado>
-                    <BotonCentrado>
-                        <img src={ speaker1 } alt='Kidfuns'/>
-                        <p>Selecciona la correcta</p>
-                        <button type="button" onClick={() => {handleClick( a, NumberRandom )}} className='glow-on-hover'>{ a }</button>
-                        <button type="button" onClick={() => {handleClick( b, NumberRandom )}} className='glow-on-hover'>{ b }</button>
-                        <button type="button" onClick={() => {handleClick( c, NumberRandom )}} className='glow-on-hover'>{ c }</button>
-                    </BotonCentrado>
-                </BotonCentrado>
-                <div>
-                    <img src={ conejo1 } alt='Kidfuns' className='logoprincipal'/>
+
+        
+            <div className='enunciado'>
+                <div className="content">
+                    <p className="text_shadows">¿Qué Numero es?</p>
                 </div>
-            </main>
+                <div className='label_letter'>
+                     <p class="text_anime">{ NumberRandom }</p>
+                </div>
+
+                <div className='containermicro2'>
+                    <div>
+                        <button className='buttonspeaker1'>
+                            <img src={ micro } alt='Kidfuns' className='sound'/>
+                        </button>
+                    </div>
+                    <div>
+                        <p >Selecciona la correcta</p>
+                    </div>
+                    <div className='selectanswer'>
+                        <button type="button" onClick={() => {handleClick( a, NumberRandom )}} className='glow-on-hover' >
+                            <div className='song'>{ a }</div>
+                            <div className='song1'><img src={ etiq1 } className='etiq'/></div>
+                        </button>
+                        <button type="button" onClick={() => {handleClick( b, NumberRandom )}} className='glow-on-hover' >
+                            <div className='song'>{ b }</div>
+                            <div className='song1'><img src={ etiq2 } className='etiq'/></div>
+                            
+                        </button>
+                        <button type="button" onClick={() => {handleClick( c, NumberRandom )}} className='glow-on-hover' >
+                            <div className='song'>{ c }</div>
+                            <div className='song1'><img src={ etiq3 } className='etiq'/></div>
+
+                        </button>
+
+                    </div>
+                </div>
+            </div>
+
+                {/*<div>
+                    <img src={ conejo1 } alt='Kidfuns' className='logoprincipal'/>
+    </div>*/}
+            </div>
     );
 }
 
