@@ -2,15 +2,19 @@ import imagen from '../../image/logos/logo7-4.PNG'
 import imagen2 from '../../image/animales/osito1.png'
 import len from '../../image/recursos/niños.png'
 import num from '../../image/recursos/niños2.png'
-import { useLocation } from 'react-router-dom';
-import React, { useState } from 'react';
-
+import React from 'react';
 import { Boton_Levels } from './botonLevels'
 import './LevelKids.css'
+
+
+/**
+ * LevelKids - level selection main view
+ * @return: list of levels
+ */
+
 const LevelKids = () => {
-    const location = useLocation();
+   //const location = useLocation();
    // const [kid, setKid] = useState(location.state.kid);
-    const materia = ""
   return (
     <div className='backgroundlvl'>
         <div className='logo_seleccion7'>

@@ -2,6 +2,12 @@ import React, {useState, useEffect} from 'react'
 import Axios from 'axios';
 import { useNavigate, useLocation } from 'react-router-dom';
 
+
+/**
+ * GetImage - shows each child's profile picture
+ * @props: image path
+ * @return: componen with image
+ */
 function GetImage(props) {
 
 const a =("../.." + props.ruta);
@@ -13,6 +19,12 @@ const image = require("../../image/avatar/1.png");
         </div>
 );
 }
+
+/**
+ * Kidbutton - component that displays the buttons in profile form
+ * @item: id of kid 
+ * @return: buton of each kid
+ */
 
 
 export function Kidbutton({item}) {
@@ -38,8 +50,14 @@ export function Kidbutton({item}) {
   }
 }
 
-export function KidGrid(props) {
-  let history = useNavigate();
+
+/**
+ * KidGrid - component that displays in the form of columns and rows
+ * @item: id of kid 
+ * @return: buton of each kid
+ */
+
+export function KidGrid() {
   const [list, setList] = useState([]);
 
   useEffect(() => {

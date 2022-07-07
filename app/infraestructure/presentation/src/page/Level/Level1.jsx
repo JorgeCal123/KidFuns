@@ -8,10 +8,15 @@ import speaker from '../../image/logos/speaker.png'
 import conejo from '../../image/animales/conejo4.png'
 import { Component1, Component4 } from './componentes'
 
+
+/**
+ * Level1 - function that selects the type of matter for level 1 
+ * @materia: level 1 language or number
+ */
 function Level1({ materia }) {
     switch (materia) {
         case 'm1':
-            return (<Component1 logo={logo} letter={lettera} micro={micro} speaker={speaker} Formulario={Formulario} conejo={conejo}/>);
+            return (<Component1 logo={logo}  micro={micro} />);
         case 'm2':
             return (<Component4 logo={logo} numero={numero1} mano={mano1} micro={micro} speaker={speaker} Formulario={Formulario1} conejo={conejo}/>);
         default:

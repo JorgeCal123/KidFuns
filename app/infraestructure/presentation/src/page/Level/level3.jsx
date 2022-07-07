@@ -7,6 +7,11 @@ import marco from '../../image/recursos/marco.png'
 import CanvasDraw from 'react-canvas-draw'
 import { Boton } from '../../elementos_formulario/Formularios'
 
+
+/**
+ * Level2 - function that selects the type of matter for level 3
+ * @materia: level 3 language or number
+ */
 function Level3({ materia }) {
     switch (materia) {
         case 'm1':

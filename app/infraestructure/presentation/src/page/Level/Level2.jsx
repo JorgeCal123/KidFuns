@@ -1,12 +1,15 @@
-import { BotonCentrado } from '../../elementos_formulario/Formularios1'
 import logo from '../../image/logos/logo7-4.PNG'
 import micro from '../../image/recursos/sonido.png'
 import conejo1 from '../../image/animales/conejo5.png'
 import etiq1 from '../../image/recursos/etiquetas_01.png'
 import etiq2 from '../../image/recursos/etiquetas_02.png'
 import etiq3 from '../../image/recursos/etiquetas_03.png'
-
 import { Component2, Component5 } from './componentes'
+
+/**
+ * Level2 - function that selects the type of matter for level 2
+ * @materia: level 2 language or number
+ */
 
 function Level2({ materia }) {
     switch (materia) {

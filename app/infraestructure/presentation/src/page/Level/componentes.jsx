@@ -2,21 +2,39 @@ import React, { useState, useRef } from 'react';
 import { useNavigate } from "react-router-dom";
 import { Reconovoz } from '../Vozreconi/Reconovoz';
 
+/**
+ * generateRandomLetter - function that gives a random letter
+ * returns: random letter
+ */
 function generateRandomLetter() {
     const alphabet = "abcdefghijklmnopqrstuvwxyz"
 
     return alphabet[Math.floor(Math.random() * alphabet.length)]
 }
 
+/**
+ * generateRandomNumber - function that gives a random number
+ * returns: random number
+ */
 function generateRandomNumber() {
     return Math.floor(Math.random() * (10 - 1 + 1)) + 0;
 }
 
+/**
+ * generateRandomIndex - function that generates a random position of an array
+ * returns: random position
+ */
 function generateRandomIndex() {
     return Math.floor(Math.random() * (3 - 1 + 1)) + 0;
 }
 
-function Component1 ({logo, letter, speaker, Formulario, micro, conejo }) {
+/**
+ * Component1 - component that displays the language level 1 view
+ * @logo: image with logo from Kidfun
+ * @micro: image with micro
+ * returns: level 1 view
+ */
+function Component1 ({logo,  micro }) {
     const materia = 'lenguaje';
     return (
         <div className="levels"> 
@@ -35,7 +53,17 @@ function Component1 ({logo, letter, speaker, Formulario, micro, conejo }) {
     );
 }
 
-function Component2({ logo, micro, conejo1, etiq1, etiq2, etiq3 }){
+/**
+ * Component2 - component that displays the language level 2 view
+ * @logo: image with logo from Kidfun
+ * @micro: image with micro
+ * @etiq1: image with etiq1
+ * @etiq2: image with etiq2
+ * @etiq3: image with etiq3
+ * returns: level 2 view
+ */
+
+function Component2({ logo, micro, etiq1, etiq2, etiq3 }){
     const a = generateRandomLetter()
     const b = generateRandomLetter()
     const c = generateRandomLetter()
@@ -106,7 +134,16 @@ function Component2({ logo, micro, conejo1, etiq1, etiq2, etiq3 }){
     );
 }
 
-function Component3({ logo, lettera, marco, conejo2, Boton, CanvasDraw}) {
+/**
+ * Component3 - component that displays the language level 3 view
+ * @logo: image with logo from Kidfun
+ * @lettera: image with the letter
+ * @Boton: component with boton
+ * @CanvasDraw: component with canvas
+ * returns: level 3 view
+ */
+
+function Component3({ logo, lettera, Boton, CanvasDraw}) {
     const canvasRef = useRef(null);
         const download = async () => {
         const image = canvasRef.current.toDataURL('image/png');
@@ -162,7 +199,13 @@ function Component3({ logo, lettera, marco, conejo2, Boton, CanvasDraw}) {
     );
 }
 
-function Component4 ({ logo, numero, mano, micro, speaker, Formulario, conejo }) {
+/**
+ * Component4 - component that displays the number level 1 view
+ * @logo: image with logo from Kidfun
+ * @micro: image with micro
+ * returns: level 1 view
+ */
+function Component4 ({ logo, micro }) {
     const materia = 'numero'
     return (
         <div className='levels'>
@@ -182,7 +225,16 @@ function Component4 ({ logo, numero, mano, micro, speaker, Formulario, conejo })
     );
 }
 
-function Component5 ({ logo, micro, conejo1, etiq1, etiq2, etiq3}) {
+/**
+ * Component5 - component that displays the number level 2 view
+ * @logo: image with logo from Kidfun
+ * @micro: image with micro
+ * @etiq1: image with etiq1
+ * @etiq2: image with etiq2
+ * @etiq3: image with etiq3
+ * returns: level 2 view
+ */
+function Component5 ({ logo, micro, etiq1, etiq2, etiq3}) {
     const a = generateRandomNumber()
     const b = generateRandomNumber()
     const c = generateRandomNumber()
@@ -258,7 +310,17 @@ function handleClick(e, NumberRandom){
             </div>
     );
 }
-function Component6({ logo, numero, marco, conejo2, Boton, CanvasDraw}) {
+
+
+/**
+ * Component6 - component that displays the number level 3 view
+ * @logo: image with logo from Kidfun
+ * @numero: image with the number
+ * @Boton: component with boton
+ * @CanvasDraw: component with canvas
+ * returns: level 3 view
+ */
+function Component6({ logo, numero, Boton, CanvasDraw}) {
     const canvasRef = useRef(null);
         const download = async () => {
         const image = canvasRef.current.toDataURL('image/png');
@@ -285,7 +347,6 @@ function Component6({ logo, numero, marco, conejo2, Boton, CanvasDraw}) {
             <div className='label_letter'>                
                 <img src={ numero } alt='Kidfuns' className='number'/>
             </div>
-            {/*imgSrc={ marco } */}
             <div className='containercanvas'>
                 <CanvasDraw 
                     className='canvas1'
@@ -296,7 +357,6 @@ function Component6({ logo, numero, marco, conejo2, Boton, CanvasDraw}) {
             </div>
 
             <div className='containerbotons'>
-                {/*<button type="button" >Save as Image</button>*/}
                 
                 <Boton type="button" onClick={download} className='glow-on-hover2' >
                     verificar
@@ -306,36 +366,10 @@ function Component6({ logo, numero, marco, conejo2, Boton, CanvasDraw}) {
                 </Boton>
             </div>
             
-            {/*<div>
-                <img src={ conejo2 } alt='Kidfuns' className='logoprincipal'/>
-            </div>*/}
         </div>
 
     );
 }
 
-function Component7 ({ logo, numero, marco, CanvasDraw, BotonCentrado, conejo2 }) {
-    return (
-        <div className='level1'>
-                <div>
-                    <header>
-                        <img src={ logo } alt='Kidfuns' className='logoprincipal'/>
-                    </header>
-                </div>
-                <BotonCentrado>
-                    <BotonCentrado>
-                        <img src={ numero } alt='Kidfuns' className='logoa'/>
-                        <p>Dibuja</p>
-                        <div>
-                            <CanvasDraw brushRadius={3} brushColor={'red'} imgSrc={ marco }/>
-                        </div>
-                    </BotonCentrado>
-                </BotonCentrado>
-                <div>
-                    <img src={ conejo2 } alt='Kidfuns' className='logoprincipal'/>
-                </div>
-            </div>
-    );
-}
 
 export { Component1, Component2, Component3, Component4, Component5, Component6, generateRandomLetter, generateRandomNumber };

@@ -1,8 +1,12 @@
 import { Boton } from '../../elementos_formulario/Formularios1'
 import { useNavigate } from 'react-router-dom';
-
 import './LevelKids.css'
 
+/**
+ * Boton_Levels - shows a list of buttons with the image and name of the children
+ * @props: materia that selecction 
+ * @returns: component with list botton from each kid
+ */
 export const Boton_Levels = (props) => {
     let history = useNavigate();
 

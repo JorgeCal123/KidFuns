@@ -2,6 +2,11 @@ import Logo from "../../image/logos/logo_principal.png"
 import { Formulario_login } from './formulario';
 import './Home.css'
 
+/**
+ * Home - home page main view
+ * returns images and a form login
+ */
+
 const Home = () => {
   return (
     <div className="inicio">

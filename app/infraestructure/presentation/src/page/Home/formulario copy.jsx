@@ -6,8 +6,11 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faExclamationTriangle } from '@fortawesome/free-solid-svg-icons';
 import Input from '../../componentes/Input'
 
+/**
+ * Formulario_user - component that displays the user form
+ * ruturn: form vist and 2 buttons
+ */
 export function Formulario_user() {
-    
     return (
         <main>
         <Formulario>
@@ -35,5 +38,3 @@ export function Formulario_user() {
         </main>
     );
 }
-
-

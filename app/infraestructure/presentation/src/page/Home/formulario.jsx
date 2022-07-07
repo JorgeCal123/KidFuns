@@ -6,11 +6,13 @@ import { Formulario, ContenedorBotonCentrado, Boton, MensajeExito, MensajeError 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faExclamationTriangle } from '@fortawesome/free-solid-svg-icons';
 import { get_info } from '../../componentes_formularios/data_formulario1';
-
 import Axios from 'axios';
 
 
-
+/**
+ * Formulario_login - component that displays the user form
+ * ruturn: form vist and 2 buttons
+ */
 
 export function Formulario_login() {
     let history = useNavigate();
@@ -22,11 +24,8 @@ export function Formulario_login() {
     Axios.get("http://127.0.0.1:8000/user/")
     .then((respuesta) => {
         respuesta.data.map( (item) => {
-          
           if ((item.email === info.email) && (item.password === info.password)){
               history('/loginkids', { state: { user: item.id }} );
-
-
           }
         })
     })
