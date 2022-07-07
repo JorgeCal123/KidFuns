@@ -25,7 +25,7 @@ export function Formulario_login() {
           
           if ((item.email === info.email) && (item.password === info.password)){
               console.log(item.email +" === " + info.email +" &&" + item.password +" === " + info.password);
-              history('/loginkids');
+              history('/loginkids', { state: { user: item.id }} );
 
 
           }

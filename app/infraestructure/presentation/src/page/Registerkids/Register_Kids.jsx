@@ -3,7 +3,7 @@ import { Formulariokids } from "./FormularioKids";
 import './Register_kids.css';
 import { Boton, ContenedorBotonCentrado } from '../../elementos_formulario/Formularios';
 import { useNavigate } from 'react-router-dom';
-import { Register_all_kids } from './List_Kids';
+import { Register_all_kids, getuser, availableLevel} from './List_Kids';
 
 
 const Registerkids = () => {
@@ -11,7 +11,8 @@ const Registerkids = () => {
 
     const onsubmit = (e) => {
         Register_all_kids();
-        history('/loginkids', { state: { id_user: "" } });
+
+       // history('/');
     }
 
     return (
@@ -35,4 +36,3 @@ const Registerkids = () => {
     );
 }
 export { Registerkids };
-
