@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import { generateRandomLetter } from '../Level/componentes'
 
 const SpeechRecognition =
   window.SpeechRecognition || window.webkitSpeechRecognition
@@ -8,10 +9,24 @@ mic.continuous = true
 mic.interimResults = true
 mic.lang = 'ES'
 
-function Reconovoz({micro}) {
+const infoprogress = {};
+
+export function add_infoprogress(key2, value) {
+  alert(key2, value)
+    infoprogress[key2] = value;
+}
+
+export function get_infoprogress() {
+    return (infoprogress)
+}
+function Reconovoz({ micro }) {
+  
   const [isListening, setIsListening] = useState(false)
   const [note, setNote] = useState(null)
   const [savedNotes, setSavedNotes] = useState([])
+  const [leter , setLeter] = useState(generateRandomLetter())
+  const [Correcta, setCorrect] = useState(0)
+  const [Fallaste, setFalse] = useState(0)
 
   useEffect(() => {
     handleListen()
@@ -50,23 +65,34 @@ function Reconovoz({micro}) {
   const handleSaveNote = () => {
     setSavedNotes([...savedNotes, note])
     setNote('')
-  }
+    if (note === leter){
+      setLeter(generateRandomLetter())
+      alert('bien')
+    }
+    if (note !== leter){
+      setLeter(generateRandomLetter())
+      alert('bien')
+    }
+    }
+    
 
   return (
     <>
+    <div className="content">
+        <p className="text_shadows">{ leter }</p>
+    </div>
       <div className="containermicro">
+        
         <div className="box">
           {isListening ? <span>🎙️</span> : <span>🛑🎙️</span>}
           <button onClick={handleSaveNote} disabled={!note}>
             Save Note
           </button>
           <button className='buttonspeaker1' onClick={() => setIsListening(prevState => !prevState)}>
-              <img src={ micro } className='speaker1'/>
+              <img src={ micro } alt='' className='speaker1'/>
           </button>
-          <p>{note}</p>
         </div>
         <div className="box">
-          <h2>Notes</h2>
           {savedNotes.map(n => (
             <p key={n}>{n}</p>
           ))}

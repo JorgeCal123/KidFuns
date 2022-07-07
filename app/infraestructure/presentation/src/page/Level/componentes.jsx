@@ -18,6 +18,7 @@ function generateRandomIndex() {
 }
 
 function Component1 ({logo, letter, speaker, Formulario, micro, conejo }) {
+    const leter = generateRandomLetter()
     return (
         <div className="levels"> 
                 <div className='conteinerlogolvs'>
@@ -30,13 +31,13 @@ function Component1 ({logo, letter, speaker, Formulario, micro, conejo }) {
                         <p className="text_shadows">¿Qué letra es?</p>
                     </div>
 
-                    <div className='label_letter'>
-                            <img src={ letter } alt='Kidfuns' className='lettera'/>
-                    </div>
+                   {/* <div className="content">
+                        <p className="text_shadows">{ leter }</p>
+    </div>*/}
                     <div className='enunciado2' >
                         <p className="text_shadows">Presiona</p>
                     </div>
-                    <Reconovoz micro={micro}/>
+                    <Reconovoz micro={micro} leter={ leter }/>
                 </div>
                 {/*<div>
                     <img src={ conejo } alt='Kidfuns' className='logoprincipal'/>
@@ -358,4 +359,4 @@ function Component7 ({ logo, numero, marco, CanvasDraw, BotonCentrado, conejo2 }
     );
 }
 
-export { Component1, Component2, Component3, Component4, Component5, Component6 };
+export { Component1, Component2, Component3, Component4, Component5, Component6, generateRandomLetter };

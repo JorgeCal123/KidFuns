@@ -13,6 +13,16 @@ export function get_info() {
     return (info)
 }
 
+const infoprogress = {};
+
+export function add_infoprogress(key2, value) {
+    infoprogress[key2] = value;
+}
+
+export function get_infoprogress() {
+    return (infoprogress)
+}
+
 export function Validation_data() {
     let valor = false;
     let valor2 = true;
