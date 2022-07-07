@@ -54,7 +54,7 @@ function Component2({ logo, micro, conejo1, etiq1, etiq2, etiq3 }){
             alert(`false, ${ Fallaste } ${ e }`);
         }
         if (Correcta === 6){
-            navigate('/loginkids')
+            navigate('/levelkids')
         }
     }
     return(
@@ -201,7 +201,7 @@ function handleClick(e, NumberRandom){
         alert(`false, ${ Fallaste } ${ e }`);
     }
     if (Correcta === 6){
-        navigate('/loginkids')
+        navigate('/levelkids')
     }
         }
     return (

@@ -9,7 +9,7 @@ import { Boton_Levels } from './botonLevels'
 import './LevelKids.css'
 const LevelKids = () => {
     const location = useLocation();
-    const [kid, setKid] = useState(location.state.kid);
+   // const [kid, setKid] = useState(location.state.kid);
     const materia = ""
   return (
     <div className='backgroundlvl'>
