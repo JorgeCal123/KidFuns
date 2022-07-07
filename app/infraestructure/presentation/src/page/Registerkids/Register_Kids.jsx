@@ -11,7 +11,7 @@ const Registerkids = () => {
 
     const onsubmit = (e) => {
         Register_all_kids();
-       // history('/');
+        history('/');
     }
 
     return (

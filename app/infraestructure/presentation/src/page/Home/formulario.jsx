@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom';
 import { Formulario, ContenedorBotonCentrado, Boton, MensajeExito, MensajeError } from '../../elementos_formulario/Formularios'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faExclamationTriangle } from '@fortawesome/free-solid-svg-icons';
-import { get_info, Validation_data } from '../../componentes_formularios/data_formulario1';
+import { get_info } from '../../componentes_formularios/data_formulario1';
 
 import Axios from 'axios';
 
@@ -24,7 +24,6 @@ export function Formulario_login() {
         respuesta.data.map( (item) => {
           
           if ((item.email === info.email) && (item.password === info.password)){
-              console.log(item.email +" === " + info.email +" &&" + item.password +" === " + info.password);
               history('/loginkids', { state: { user: item.id }} );
 
 
@@ -34,7 +33,6 @@ export function Formulario_login() {
     }
     const Register = () =>{
 
-        console.log("presiona boton");
         history('/register');
     }
     

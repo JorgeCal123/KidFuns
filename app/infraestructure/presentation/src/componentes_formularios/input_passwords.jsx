@@ -18,7 +18,6 @@ const validarPassword2 = () => {
 
 export function Input_passwords() {
     const [password2, cambiarPassword2] = useState({ campo: '', valido: null });    const expresiones = {mails: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/}
-    const [password, cambiarPassword] = useState({ campo: '', valido: null });
     return (
     <ComponenteInput
         estado={password2}

@@ -5,7 +5,6 @@ import ComponenteInput from './Input';
 export function Input_mail() {
     const [mail, setMail] = useState({ campo: '', valido: null });
     const expresiones = {mails: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/}
-   // const value = mail['campo'];
    
     return (
         <ComponenteInput

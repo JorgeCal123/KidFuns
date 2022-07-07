@@ -1,7 +1,10 @@
 import styled, {css} from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-/** objeto que contiene los colores que voy a usar para mi aplicacion*/
+/** 
+ * objeto que contiene los colores que voy a usar para mi aplicacion
+ * 
+ */
 const colores = {
 	borde: "#0075FF",
 	error: "#F66060",
@@ -38,7 +41,9 @@ const Label = styled.label`
 		color: ${colores.error};
 	`}
 `;
-/** grupo para encerrar el input y el icono x */
+/** 
+ * grupo para encerrar el input y el icono x 
+ */
 const GrupoInput = styled.div`
 	position: relative;
 	z-index: 90;

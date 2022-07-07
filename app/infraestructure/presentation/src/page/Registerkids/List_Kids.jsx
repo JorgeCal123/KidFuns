@@ -1,10 +1,4 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import { Route } from "react-router-dom";
-
-import Logo from "../../image/logos/logo_principal.png"
-
-import { Kid } from './kid';
 import './Register_kids.css'
 const info = [];
 const objKids = [];
@@ -12,26 +6,20 @@ const objKids = [];
 const kid = {};
 
 export function Add_Kids (props) {
-    console.log("se agrega " + props)
     info.push(props)
 }
 
-
 export function obj_Kids ({data}) {
-    console.log("se agrega un kid con id " + data.id)
     objKids.push(data.id)
-    a();
+    add_Level();
 
 }
-
 
 export function getuser () {
     return (kid);
 }
 
-
 export function List_Kids () {
-    console.log(info)
     return (
         <div>
             <div className='title'>
@@ -50,7 +38,6 @@ export function List_Kids () {
     );
 }
 
-
 const new_kid = {};
 
 export function Register_all_kids() {
@@ -66,22 +53,17 @@ export function Register_all_kids() {
                   user: item.i
                 })
               };
-              console.log(requestOptions);
               fetch('http://127.0.0.1:8000/kid/', requestOptions)
                 .then(response => response.json())                
                 .then(
                     data => obj_Kids({data})
                     
                     );
-            
-
     })
-    
-    
     }
 
-    const a = () =>{
-        console.log("entra en metodo a")
+
+    const add_Level = () =>{
 
         availableLevel({stage:1, lvl:"l1", type:"m1"});
         availableLevel({stage:1, lvl:"l2", type:"m1"});
@@ -104,16 +86,9 @@ export function availableLevel({ stage, lvl, type}) {
                 kid: item
                 })
               };
-              console.log("entra en metodo avalaible lebel" + lvl +" "+ type + " "+ item)
 
               fetch('http://127.0.0.1:8000/level/', requestOptions)
-                .then(response => response.json())                
-                .then(
-                    data => console.log("esta mal  "+ data)
-                    
-                    );
-        
-
+                .then(response => response.json())
     })
     
 }

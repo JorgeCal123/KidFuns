@@ -5,7 +5,6 @@ import ComponenteInput from './Input';
 export function Input_country() {
     const [country, cambiarCountry] = useState({ campo: '', valido: null });
     const expresiones = {country: /^[a-zA-ZÀ-ÿ\s]{1,40}$/} 
-   // const value = mail['campo'];
 
     return (
         <ComponenteInput

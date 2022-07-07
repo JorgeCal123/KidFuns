@@ -2,11 +2,7 @@ import React, {useState, useEffect} from 'react'
 import Axios from 'axios';
 import { useNavigate, useLocation } from 'react-router-dom';
 
-//import styles from'./Loginkids.css'
-
-
 function GetImage(props) {
-
 
 const a =("../.." + props.ruta);
 const image = require("../../image/avatar/1.png");
@@ -14,7 +10,6 @@ const image = require("../../image/avatar/1.png");
     return (    
         <div>
             <img src ={ require("../../image/avatar/1.png")} alt="hola" />
-            {/*<img src ={require("../.." + props.ruta)} alt="" />*/}
         </div>
 );
 }
@@ -41,23 +36,11 @@ export function Kidbutton({item}) {
     );
 
   }
-
- 
- 
- 
- 
- 
-
 }
-
 
 export function KidGrid(props) {
   let history = useNavigate();
   const [list, setList] = useState([]);
-
-  
-  
-  
 
   useEffect(() => {
     Axios({
@@ -67,7 +50,6 @@ export function KidGrid(props) {
         setList(response.data);
       })
       .catch((error) => {
-        console.log(error);
       });
   }, [setList]);
 

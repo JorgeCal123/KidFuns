@@ -2,6 +2,7 @@ import React from 'react';
 import {Input, Label, GrupoInput, LeyendaError, IconoValidacion} from '../elementos_formulario/Formularios';
 import { faCheckCircle, faTimesCircle } from '@fortawesome/free-solid-svg-icons';
 import { add_info, get_info} from './data_formulario1';
+
 /**
  * Metodos de clicks y eventos
  * on change nos permite ejecutar una funcion

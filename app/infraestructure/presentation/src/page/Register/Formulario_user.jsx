@@ -51,7 +51,6 @@ const Formulario_user = () => {
       cambiarPassword({ campo: '', valido: null });
       cambiarPassword2({ campo: '', valido: null });
 
-      // envio de datos
       const requestOptions = {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -75,9 +74,7 @@ const Formulario_user = () => {
           history('/registerkids', { state: { id_user: data.id } });
         })
 
-
     } else {
-      //cambiarFormularioValido(false);
     }
   }
 

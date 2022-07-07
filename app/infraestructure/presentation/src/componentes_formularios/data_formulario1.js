@@ -32,8 +32,4 @@ export function Validation_data() {
 
       return(valor)
 
-   /* List.map(function (current) {
-      console.log(current)
-    
-    })*/
 }

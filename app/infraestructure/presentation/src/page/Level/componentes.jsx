@@ -1,6 +1,5 @@
 import React, { useState, useRef } from 'react';
 import { useNavigate } from "react-router-dom";
-import '../../estilos_viejos.css'
 import { Reconovoz } from '../Vozreconi/Reconovoz';
 
 function generateRandomLetter() {
@@ -32,9 +31,6 @@ function Component1 ({logo, letter, speaker, Formulario, micro, conejo }) {
                     </div>
                     <Reconovoz micro={micro} materia={ materia }/>
                 </div>
-                {/*<div>
-                    <img src={ conejo } alt='Kidfuns' className='logoprincipal'/>
-    |           </div>*/}
         </div>
     );
 }

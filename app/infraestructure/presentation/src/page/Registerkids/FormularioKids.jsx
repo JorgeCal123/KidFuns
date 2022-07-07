@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import Logo from "../../image/logos/logo_principal.png"
 import { Formulario, ContenedorBotonCentrado, Boton, MensajeExito, MensajeError } from '../../elementos_formulario/Formularios';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faExclamationTriangle } from '@fortawesome/free-solid-svg-icons';
@@ -22,9 +21,7 @@ const Formulariokids = (props) => {
 
   }
   useEffect(() => {
-    console.log("antes del user");
     setId_user(location.state.id_user)
-    console.log("en kids" + id_user);
   }, [location]);
   function listakid(){
     const dic = {
