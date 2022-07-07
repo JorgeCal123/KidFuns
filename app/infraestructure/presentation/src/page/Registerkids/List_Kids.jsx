@@ -81,6 +81,8 @@ export function Register_all_kids() {
     }
 
     const a = () =>{
+        console.log("entra en metodo a")
+
         availableLevel({stage:1, lvl:"l1", type:"m1"});
         availableLevel({stage:1, lvl:"l2", type:"m1"});
         availableLevel({stage:1, lvl:"l3", type:"m1"});
@@ -102,7 +104,8 @@ export function availableLevel({ stage, lvl, type}) {
                 kid: item
                 })
               };
-              console.log(requestOptions);
+              console.log("entra en metodo avalaible lebel" + lvl +" "+ type + " "+ item)
+
               fetch('http://127.0.0.1:8000/level/', requestOptions)
                 .then(response => response.json())                
                 .then(
