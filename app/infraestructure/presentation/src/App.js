@@ -8,10 +8,14 @@ import { LoginKids } from './page/Loginkids/Loginkids'
 import { Level } from "./page/Level/MainLevel";
 import { Result } from "./page/Result/Result";
 import { Table } from './page/tablas/tablaexersice'
-
 import { Page404 } from "./page/Page404/Page404.jsx";
-
 import './styles_main.css'
+
+/**
+ * App - all list of routes
+ * @returns Router of all views
+ */
+
 function App() {
     return (
         <div className="App">
