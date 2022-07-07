@@ -18,7 +18,7 @@ function generateRandomIndex() {
 }
 
 function Component1 ({logo, letter, speaker, Formulario, micro, conejo }) {
-    const leter = generateRandomLetter()
+    const materia = 'lenguaje';
     return (
         <div className="levels"> 
                 <div className='conteinerlogolvs'>
@@ -30,14 +30,7 @@ function Component1 ({logo, letter, speaker, Formulario, micro, conejo }) {
                     <div className="content">
                         <p className="text_shadows">¿Qué letra es?</p>
                     </div>
-
-                   {/* <div className="content">
-                        <p className="text_shadows">{ leter }</p>
-    </div>*/}
-                    <div className='enunciado2' >
-                        <p className="text_shadows">Presiona</p>
-                    </div>
-                    <Reconovoz micro={micro} leter={ leter }/>
+                    <Reconovoz micro={micro} materia={ materia }/>
                 </div>
                 {/*<div>
                     <img src={ conejo } alt='Kidfuns' className='logoprincipal'/>
@@ -174,6 +167,7 @@ function Component3({ logo, lettera, marco, conejo2, Boton, CanvasDraw}) {
 }
 
 function Component4 ({ logo, numero, mano, micro, speaker, Formulario, conejo }) {
+    const materia = 'numero'
     return (
         <div className='levels'>
                 <div className='conteinerlogolvs'>
@@ -183,20 +177,9 @@ function Component4 ({ logo, numero, mano, micro, speaker, Formulario, conejo })
                 </div>
                 <div className='enunciado'>
                     <div className="content">
-                        <p className="text_shadows">¿Qué letra es?</p>
+                        <p className="text_shadows">¿Qué numero es?</p>
                     </div>
-                    <div className='containerbotons'>
-                        <div className='img1'>
-                            <img src={ numero } alt='Kidfuns' className='img1'/>
-                        </div>
-                        <div className='img2'>
-                            <img src={ mano } alt='Kidfuns' className='label_letter'/>
-                        </div>
-                    </div>
-                    <div className='enunciado2' >
-                        <p className="text_shadows">Presiona</p>
-                    </div>
-                    <Reconovoz micro={micro}/>
+                    <Reconovoz micro={micro} materia={ materia }/>
                 </div>
 
             </div>
@@ -359,4 +342,4 @@ function Component7 ({ logo, numero, marco, CanvasDraw, BotonCentrado, conejo2 }
     );
 }
 
-export { Component1, Component2, Component3, Component4, Component5, Component6, generateRandomLetter };
+export { Component1, Component2, Component3, Component4, Component5, Component6, generateRandomLetter, generateRandomNumber };

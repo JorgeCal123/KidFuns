@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
-import { generateRandomLetter } from '../Level/componentes'
+import { useNavigate } from 'react-router-dom'
+import { generateRandomLetter, generateRandomNumber } from '../Level/componentes'
 
 const SpeechRecognition =
   window.SpeechRecognition || window.webkitSpeechRecognition
@@ -19,14 +20,15 @@ export function add_infoprogress(key2, value) {
 export function get_infoprogress() {
     return (infoprogress)
 }
-function Reconovoz({ micro }) {
+function Reconovoz({ micro, materia }) {
   
   const [isListening, setIsListening] = useState(false)
   const [note, setNote] = useState(null)
   const [savedNotes, setSavedNotes] = useState([])
-  const [leter , setLeter] = useState(generateRandomLetter())
-  const [Correcta, setCorrect] = useState(0)
-  const [Fallaste, setFalse] = useState(0)
+  const [leter , setLeter] = useState('')
+  const [Correcta, setCorrect] = useState(1)
+  const [Fallaste, setFalse] = useState(1)
+  const navigate = useNavigate('/levelkids')
 
   useEffect(() => {
     handleListen()
@@ -65,13 +67,33 @@ function Reconovoz({ micro }) {
   const handleSaveNote = () => {
     setSavedNotes([...savedNotes, note])
     setNote('')
-    if (note === leter){
-      setLeter(generateRandomLetter())
-      alert('bien')
+    if (note === 'uno' && materia === 'numero'){
+      setLeter(generateRandomNumber())
+      setCorrect(Correcta + 1)
+      alert(`true, ${ note } ${ leter }`);
     }
-    if (note !== leter){
+    else if (note === leter && materia === 'lenguaje'){
       setLeter(generateRandomLetter())
-      alert('bien')
+      setCorrect(Correcta + 1)
+      alert(`true, ${ note } ${ leter }`);
+    }
+    else if (Number(note) === leter && materia === 'numero'){
+      setLeter(generateRandomNumber())
+      setCorrect(Correcta + 1)
+      alert(`true, ${ note } ${ leter }`);
+    }
+    else if (note !== leter && materia === 'lenguaje'){
+      setLeter(generateRandomLetter())
+      setFalse(Fallaste + 1)
+      alert(`False, ${ note } ${ leter }`);
+    }
+    else if (Number(note) !== leter && materia === 'numero'){
+      setLeter(generateRandomNumber())
+      setFalse(Fallaste + 1)
+      alert(`False, ${ typeof(note) } ${ typeof(leter) }`);
+    }
+    if (Correcta === 6){
+        navigate('/loginkids')
     }
     }
     
@@ -81,6 +103,9 @@ function Reconovoz({ micro }) {
     <div className="content">
         <p className="text_shadows">{ leter }</p>
     </div>
+    <div className='enunciado2' >
+      <p className="text_shadows">Presiona</p>
+    </div>
       <div className="containermicro">
         
         <div className="box">
@@ -88,6 +113,7 @@ function Reconovoz({ micro }) {
           <button onClick={handleSaveNote} disabled={!note}>
             Save Note
           </button>
+          
           <button className='buttonspeaker1' onClick={() => setIsListening(prevState => !prevState)}>
               <img src={ micro } alt='' className='speaker1'/>
           </button>
