@@ -29,8 +29,6 @@ We are three enthusiasts who are passionate about coding but also like to keep i
 - Jhon Pulido - electronics engineer
 
 
-## Blog posts
-
 
 ###  Tutorial
 
