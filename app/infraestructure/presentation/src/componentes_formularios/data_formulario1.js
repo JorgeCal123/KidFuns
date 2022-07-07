@@ -22,18 +22,11 @@ export function Validation_data() {
           respuesta.data.map( (item) => {
             
             if ((item.email === info.email) && (item.password === info.password)){
-                console.log(item.email +" === " + info.email +" &&" + item.password +" === " + info.password);
-                console.log("entra");
                 return(valor)
             }
-              /*if ((item.email === info.email) && (item.password === info.password)){
-                console.log(item.email +" === " + info.email +" &&" + item.password +" === " + info.password);
-                Valor = 'true';
-              }*/
           })
       })
       .catch(() => {
-        console.log("src/componentes_formularios/data_formulario1 error en request Axios method validation data")
       })
 
 
