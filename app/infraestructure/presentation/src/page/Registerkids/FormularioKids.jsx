@@ -6,6 +6,13 @@ import Input from '../../componentes_formularios/Input';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { Add_Kids, List_Kids } from './List_Kids';
 
+
+/**
+ * Formulariokids - component that displays the kid form
+ * ruturn: form vist and 2 buttons
+ */
+
+
 const Formulariokids = (props) => {
   const [name, cambiarName] = useState({ campo: '', valido: null });
   const [age, cambiarAge] = useState({ campo: '', valido: null });

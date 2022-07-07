@@ -5,6 +5,10 @@ import { Boton, ContenedorBotonCentrado } from '../../elementos_formulario/Formu
 import { useNavigate } from 'react-router-dom';
 import { Register_all_kids, getuser, availableLevel} from './List_Kids';
 
+/**
+ * Registerkids - children's registry home page
+ * @return: component with register kid
+ */
 
 const Registerkids = () => {
     let history = useNavigate();

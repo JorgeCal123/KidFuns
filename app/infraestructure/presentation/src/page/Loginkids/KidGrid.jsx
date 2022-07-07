@@ -44,9 +44,7 @@ export function Kidbutton({item}) {
       {item.name}
        <GetImage ruta={item.avatar} />
      </button>
-   
     );
-
   }
 }
 

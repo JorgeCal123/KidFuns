@@ -2,22 +2,40 @@ import React, { useState } from 'react';
 import './Register_kids.css'
 const info = [];
 const objKids = [];
-
 const kid = {};
 
+
+/**
+ * Add_Kids - add the object kid
+ * @props: object kid  
+ */
 export function Add_Kids (props) {
     info.push(props)
 }
 
+/**
+ * obj_Kids - add the id kid and add level
+ * @data: id from kid
+ */
 export function obj_Kids ({data}) {
     objKids.push(data.id)
     add_Level();
-
 }
+
+/**
+ * getuser - get object kid
+ * @return: object kid
+ */
 
 export function getuser () {
     return (kid);
 }
+
+/**
+ * getuser - component that show list of kids
+ * @return: view with all kids
+ */
+
 
 export function List_Kids () {
     return (
@@ -40,6 +58,11 @@ export function List_Kids () {
 
 const new_kid = {};
 
+/**
+ * Register_all_kids - function that register all kids in the Apis
+ * @return: void
+ */
+
 export function Register_all_kids() {
 
     info.map( (item, index) => {
@@ -61,8 +84,6 @@ export function Register_all_kids() {
                     );
     })
     }
-
-
     const add_Level = () =>{
 
         availableLevel({stage:1, lvl:"l1", type:"m1"});
@@ -71,7 +92,15 @@ export function Register_all_kids() {
         availableLevel({stage:1, lvl:"l1", type:"m2"});
         availableLevel({stage:1, lvl:"l2", type:"m2"});
         availableLevel({stage:1, lvl:"l3", type:"m2"});
-    } 
+    }
+
+/**
+ * availableLevel - function that register all levels in the Apis
+ * @stage: staage block or desblock level
+ * lvl: level that register to each kid
+ * type: game stuff
+ * @return: void
+ */
 
 export function availableLevel({ stage, lvl, type}) {
 
@@ -86,7 +115,6 @@ export function availableLevel({ stage, lvl, type}) {
                 kid: item
                 })
               };
-
               fetch('http://127.0.0.1:8000/level/', requestOptions)
                 .then(response => response.json())
     })

@@ -2,7 +2,10 @@ import React from 'react'
 import logo1 from '../../image/logos/logo7-3.PNG';
 import { Perfil } from "./Perfil"
 import './Loginkids.css'
-
+/**
+ * LoginKids -kids login home page
+ * @return: component with view from login kids
+ */
 const LoginKids = () => {
   return (
     <div className="inicio5">
