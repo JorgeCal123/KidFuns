@@ -67,25 +67,26 @@ function Reconovoz({ micro, materia }) {
   const handleSaveNote = () => {
     setSavedNotes([...savedNotes, note])
     setNote('')
+    let value = note.toLowerCase();
     if (note === 'uno' && materia === 'numero'){
       setLeter(generateRandomNumber())
       setCorrect(Correcta + 1)
       alert(`true, ${ note } ${ leter }`);
     }
-    else if (note === leter && materia === 'lenguaje'){
+    else if (value === leter && materia === 'lenguaje'){
       setLeter(generateRandomLetter())
       setCorrect(Correcta + 1)
-      alert(`true, ${ note } ${ leter }`);
+      alert(`true, ${ value } ${ leter }`);
     }
     else if (Number(note) === leter && materia === 'numero'){
       setLeter(generateRandomNumber())
       setCorrect(Correcta + 1)
       alert(`true, ${ note } ${ leter }`);
     }
-    else if (note !== leter && materia === 'lenguaje'){
+    else if (value !== leter && materia === 'lenguaje'){
       setLeter(generateRandomLetter())
       setFalse(Fallaste + 1)
-      alert(`False, ${ note } ${ leter }`);
+      alert(`False, ${ value } ${ leter }`);
     }
     else if (Number(note) !== leter && materia === 'numero'){
       setLeter(generateRandomNumber())
