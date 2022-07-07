@@ -15,7 +15,13 @@
     overflow: hidden hidden;
 
 }
-
+.gridkid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 110px);
+    gap: 40px;
+    justify-content: center;
+    background-color: red;
+}
 .headerlogo5{
     width: 100%;
     margin: 0;
@@ -39,7 +45,6 @@
     width: 150px;
     height: 150px;
     border-radius: 100%;
-
 }
 
 .imgbutton {
@@ -50,7 +55,15 @@
 
 }
 
+.containermain
+{
+    padding-left: 22%;
+}
+/*
 .gridkid {
     display: grid;
     grid-template-columns: repeat(auto-fill, 110px);
+    justify-content: center;
+    align-items: center;
 }
+*/

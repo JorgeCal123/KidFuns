@@ -200,7 +200,7 @@ const ContenedorBotonCentrado = styled.div`
 	flex-direction: column;
 	align-items: center;
 	grid-column: span 1;
-
+	justify-content: center;
 	@media (max-width: 800px){
 		grid-column: span 1;
 	}

@@ -95,6 +95,8 @@
 
 
 }
+.song1{
+}
 
 .selectanswer {
   display: grid;
@@ -105,6 +107,8 @@
 }
 .glow-on-hover {
   background-color: transparent;
+  border: none;
+
   position: relative;
   width: auto;
 }

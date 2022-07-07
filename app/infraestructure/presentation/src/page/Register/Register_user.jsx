@@ -2,6 +2,10 @@ import logo1 from '../../image/animales/conejo1.png';
 import { Formulario_user } from "./Formulario_user";
 import './Register.css'
 
+/**
+ * register - class main page of register ucer
+ * @return: formulario User and images
+ */
 
 const Register = () => {
     return (
@@ -12,7 +16,10 @@ const Register = () => {
                 </div>
             </main>
             <aside  className="formulario2">
+                <div className="lable_title">
                 <h1>Registro</h1>
+
+                </div>
                 <Formulario_user />
             </aside>
         </div>

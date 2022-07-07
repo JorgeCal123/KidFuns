@@ -27,8 +27,7 @@ const Registerkids = () => {
                 <div className="formulario4">
                     <Formulariokids />
                 </div>
-
-                <footer className='boton_registrar'>
+                <footer className='boton_registrar3'>
                 <ContenedorBotonCentrado>
                     <Boton type="submit" onClick={onsubmit} >Registrar</Boton>
                 </ContenedorBotonCentrado>

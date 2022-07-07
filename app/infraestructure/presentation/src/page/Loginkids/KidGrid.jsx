@@ -43,7 +43,8 @@ export function Kidbutton({item}) {
       <button className='containerbutton' key={item.id} type="submit" onClick={onsubmit}>
       {item.name}
        <GetImage ruta={item.avatar} />
-     </button>
+      </button>
+
     );
   }
 }
@@ -73,7 +74,7 @@ export function KidGrid() {
     <div className="App">
       <ul>
         {list.map((item) => (
-          <div key= {item.id}>
+          <div key= {item.id} className="gridcont1">
             <Kidbutton item={item} />
           </div>
 

@@ -11,12 +11,11 @@
 .main_logo_formulario{
     display: grid;
 	grid-template-columns: 200px 1fr;
-    min-height: 100%;
     width:100%;
-    height: 100%;
     margin: 0;
     padding: 0;
-    
+    margin-top: 4%;
+
 }
 
 .form_list {
@@ -41,10 +40,10 @@
     justify-content: center;
 }
 
-
-.boton_registrar{
-    position: fixed;
-    bottom: 0;
+.boton_registrar3{
+    position: relative;
+    margin-left: 270%;
+    margin-right: 50%;
 }
 /*
 

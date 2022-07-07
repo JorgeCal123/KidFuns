@@ -41,7 +41,15 @@
 }
 
 .formulario2 {
+    align-items: center;
+
     min-width: 400px;
     padding: 0;
+    padding-top: 20%;
+
+}
+
+.lable_title{
+    text-align:center;
 
 }

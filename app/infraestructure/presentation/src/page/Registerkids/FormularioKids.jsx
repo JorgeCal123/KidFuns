@@ -106,7 +106,7 @@ const Formulariokids = (props) => {
           {formularioValido === true && <MensajeExito>Formulario enviado exitosamente!</MensajeExito>}
         </ContenedorBotonCentrado>
       </Formulario>
-      <div  className="formulario2">
+      <div  className="formulario3">
          <List_Kids></List_Kids>
       </div>
     </div>
